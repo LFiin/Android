@@ -49,4 +49,11 @@
         android:layout_height="wrap_content"
         android:text="@string/login"
         android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textColor="#00008B"
+        android:text="@string/link"/>
 </LinearLayout>
