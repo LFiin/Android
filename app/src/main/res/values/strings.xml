@@ -4,4 +4,9 @@
     <string name="senha">Senha</string>
     <string name="login">Login</string>
     <string name="link">Novo usuário? Inscreva-se!</string>
+    <string name="email">E-mail</string>
+    <string name="nome">Nome</string>
+    <string name="cpf">CPF</string>
+    <string name="telefone">Telefone</string>
+    <string name="cadastrar">Cadastrar</string>
 </resources>

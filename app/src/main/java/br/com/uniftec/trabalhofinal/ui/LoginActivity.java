@@ -1,4 +1,4 @@
-package br.com.uniftec.trabalhofinal;
+package br.com.uniftec.trabalhofinal.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,12 +7,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+import br.com.uniftec.trabalhofinal.R;
+
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         Button btLogin = (Button) findViewById(R.id.btLogin);
         btLogin.setOnClickListener(this);
