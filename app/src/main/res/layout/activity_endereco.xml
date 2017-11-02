@@ -5,59 +5,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:padding="16dp"
-    tools:context="br.com.uniftec.trabalhofinal.ui.CadastroActivity">
+    tools:context=".ui.EnderecoActivity"
+    android:padding="16dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/email"/>
+        android:text="@string/rua"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tEmail"/>
+        android:id="@+id/tRua"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/senha"/>
+        android:text="@string/numero"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:id="@+id/tSenha"/>
+        android:id="@+id/tNumero"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/nome"/>
+        android:text="@string/complemento"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tNome"/>
+        android:id="@+id/tComplemento"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/cpf"/>
+        android:text="@string/bairro"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tCpf"/>
+        android:id="@+id/tBairro"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/telefone" />
+        android:text="@string/cidade" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tTelefone"/>
+        android:id="@+id/tCidade"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/estado" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tEstado"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -65,10 +74,10 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/btCadastrar"
+            android:id="@+id/btAddEndereco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cadastrar"
+            android:text="@string/adicionar"
             android:layout_gravity="center"/>
 
         <Button

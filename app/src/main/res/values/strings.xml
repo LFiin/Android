@@ -9,4 +9,12 @@
     <string name="cpf">CPF</string>
     <string name="telefone">Telefone</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="rua">Rua</string>
+    <string name="numero">Número</string>
+    <string name="complemento">Complemento</string>
+    <string name="bairro">Bairro</string>
+    <string name="cidade">Cidade</string>
+    <string name="estado">Estado</string>
+    <string name="adicionar">Adicionar</string>
 </resources>

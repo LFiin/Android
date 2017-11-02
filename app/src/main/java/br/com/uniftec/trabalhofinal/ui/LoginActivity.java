@@ -1,9 +1,11 @@
 package br.com.uniftec.trabalhofinal.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,23 +13,34 @@ import br.com.uniftec.trabalhofinal.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private Button btLogin;
+    private EditText tLogin;
+    private EditText tSenha;
+    private TextView tNovoUsuario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button btLogin = (Button) findViewById(R.id.btLogin);
+        btLogin = (Button) findViewById(R.id.btLogin);
         btLogin.setOnClickListener(this);
+        tLogin = (EditText) findViewById(R.id.tLogin);
+        tSenha = (EditText) findViewById(R.id.tSenha);
+        tNovoUsuario = (TextView) findViewById(R.id.tNovoUsuario);
+        tNovoUsuario.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        TextView tLogin = (TextView) findViewById(R.id.tLogin);
-        TextView tSenha = (TextView) findViewById(R.id.tSenha);
-        if(tLogin.getText().toString().equals("leandro")&&tSenha.getText().toString().equals("123")){
-            alert("Login efetuado com sucesso");
+        if (view == btLogin){
+            if(tLogin.getText().toString().equals("leandro")&&tSenha.getText().toString().equals("123")){
+                alert("Login efetuado com sucesso");
+            }else{
+                alert("Login ou senha incorretos");
+            }
         }else{
-            alert("Login ou senha incorretos");
+            startActivity(new Intent(this, CadastroActivity.class));
         }
     }
 
