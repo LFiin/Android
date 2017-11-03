@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (view == btLogin){
             if(tLogin.getText().toString().equals("leandro")&&tSenha.getText().toString().equals("123")){
                 alert("Login efetuado com sucesso");
+                startActivity(new Intent(this, ListaProdutosActivity.class));
             }else{
                 alert("Login ou senha incorretos");
             }
