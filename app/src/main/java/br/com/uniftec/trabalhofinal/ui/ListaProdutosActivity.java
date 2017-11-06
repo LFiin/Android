@@ -1,62 +1,66 @@
 package br.com.uniftec.trabalhofinal.ui;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import br.com.uniftec.trabalhofinal.R;
-import br.com.uniftec.trabalhofinal.adapter.RecyclerAdapter;
+import br.com.uniftec.trabalhofinal.adapter.CardAdapter;
 import br.com.uniftec.trabalhofinal.model.Produto;
+import br.com.uniftec.trabalhofinal.repositorio.ProdutoFactory;
+
+import static br.com.uniftec.trabalhofinal.repositorio.ProdutoFactory.makeProduct;
 
 /**
- * Created by Fin on 03/11/2017.
+ * Created by Fin on 06/11/2017.
  */
 
-public class ListaProdutosActivity extends AppCompatActivity {
+public class ListaProdutosActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private CardAdapter cardAdapter;
+    private StaggeredGridLayoutManager layoutManager;
     private RecyclerView meuRecyclerView;
-    private RecyclerView.LayoutManager meuLayoutManager;
-    RecyclerAdapter adapter;
-    private List<Produto> produtoListas = new ArrayList<>();
+    private Button btnAdd;
+    public static ArrayList<Produto> dados;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+
+
+    protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view);
+        setContentView(R.layout.acticity_recycler_view_layout);
 
-        for (int i = 0; i < 10; i++) {
-            Produto produto = new Produto();
-            produto.setTitulo("Produto " + i);
-            produto.setDescricao("Descricao produto " + i);
+        meuRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_layout_recycler);
+        btnAdd = (Button) findViewById(R.id.btn_Add);
+        btnAdd.setOnClickListener(this);
 
-            produtoListas.add(produto);
+        layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        meuRecyclerView.setLayoutManager(layoutManager);
+
+        ProdutoFactory produtoFactory = new ProdutoFactory();
+
+        dados = new ArrayList<Produto>(5);
+        for (int i = 0; i < dados.size(); i++){
+            dados.add(produtoFactory.makeProduct());
         }
 
-        setaRecyclerView();
+        cardAdapter = new CardAdapter(dados);
+        meuRecyclerView.setAdapter(cardAdapter);
 
     }
 
-    public void setaRecyclerView(){
 
-        //Aqui é instanciado o Recyclerview
-        meuRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-
-        meuLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-
-        meuRecyclerView.setLayoutManager(meuLayoutManager);
-
-        adapter = new RecyclerAdapter(this, produtoListas);
-
-        meuRecyclerView.setAdapter(adapter);
+    @Override
+    public void onClick(View view) {
+        cardAdapter.updateList(ProdutoFactory.makeProduct());
     }
-
-
 }

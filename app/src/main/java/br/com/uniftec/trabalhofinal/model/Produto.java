@@ -24,6 +24,12 @@ public class Produto {
 
     private Categoria categoria;
 
+    public Produto(String titulo, Double preco, String descricoe) {
+        titulo = titulo;
+        preco = preco;
+        descricao = descricoe;
+    }
+
     public int getId() {
         return id;
     }
@@ -87,4 +93,5 @@ public class Produto {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+    
 }
