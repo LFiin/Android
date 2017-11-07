@@ -24,10 +24,10 @@ public class Produto {
 
     private Categoria categoria;
 
-    public Produto(String titulo, Double preco, String descricoe) {
-        titulo = titulo;
-        preco = preco;
-        descricao = descricoe;
+    public Produto(String titulo, Double preco, String descricao) {
+        this.titulo = titulo;
+        this.preco = preco;
+        this.descricao = descricao;
     }
 
     public int getId() {

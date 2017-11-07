@@ -1,5 +1,6 @@
 package br.com.uniftec.trabalhofinal.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,6 +16,7 @@ import br.com.uniftec.trabalhofinal.R;
 
 public class CadastroActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private Button btAddNovoEndereco;
     private Button btCadastrar;
     private Button btCancelar;
     private EditText tEmail;
@@ -28,6 +30,8 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
+        btAddNovoEndereco = (Button) findViewById(R.id.btAddNovoEndereco);
+        btAddNovoEndereco.setOnClickListener(this);
         btCadastrar = (Button) findViewById(R.id.btCadastrar);
         btCadastrar.setOnClickListener(this);
         btCancelar = (Button) findViewById(R.id.btCancelar);
@@ -41,14 +45,17 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        if (view == btCadastrar){
-            if(!"".equals(tEmail.getText().toString())&&!"".equals(tSenha.getText().toString())
-                    &&!"".equals(tNome.getText().toString())&&!"".equals(tCpf.getText().toString())
-                    &&!"".equals(tTelefone.getText().toString())){
+        if (view == btCadastrar) {
+            if (!"".equals(tEmail.getText().toString()) && !"".equals(tSenha.getText().toString())
+                    && !"".equals(tNome.getText().toString()) && !"".equals(tCpf.getText().toString())
+                    && !"".equals(tTelefone.getText().toString())) {
                 alert("Cadastro realizado com sucesso");
-            } else{
+                finish();
+            } else {
                 alert("Todos os campos devem estar preenchidos");
             }
+        } else if (view == btAddNovoEndereco){
+            startActivity(new Intent(this, EnderecoActivity.class));
         } else {
             finish();
         }

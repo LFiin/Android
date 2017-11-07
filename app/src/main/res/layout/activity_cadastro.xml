@@ -59,6 +59,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/tTelefone"/>
 
+    <Button
+        android:id="@+id/btAddNovoEndereco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/adicionarnovoendereco"
+        android:layout_gravity="center"/>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
