@@ -1,5 +1,6 @@
 package br.com.uniftec.trabalhofinal.adapter.holder;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
@@ -20,6 +21,8 @@ public class CardHolder extends RecyclerView.ViewHolder{
 
     public TextView preco;
 
+    public CardView cardView;
+
     public ImageButton btnAdd;
 
     public ImageButton btnDelete;
@@ -27,11 +30,13 @@ public class CardHolder extends RecyclerView.ViewHolder{
     public CardHolder(View itemView) {
         super(itemView);
 
-        this.titulo = (TextView) itemView.findViewById(R.id.main_card_titulo);
-        this.descricao = (TextView) itemView.findViewById(R.id.main_card_descricao);
-        this.preco = (TextView) itemView.findViewById(R.id.main_card_preco);
-        this.btnAdd = (ImageButton) itemView.findViewById(R.id.main_card_more);
-        this.btnDelete = (ImageButton) itemView.findViewById(R.id.main_card_delete);
+        titulo = (TextView) itemView.findViewById(R.id.main_card_titulo);
+        descricao = (TextView) itemView.findViewById(R.id.main_card_descricao);
+        preco = (TextView) itemView.findViewById(R.id.main_card_preco);
+        btnAdd = (ImageButton) itemView.findViewById(R.id.main_card_more);
+        btnDelete = (ImageButton) itemView.findViewById(R.id.main_card_delete);
+        cardView = (CardView) itemView.findViewById(R.id.main_card_view);
+
 
     }
 

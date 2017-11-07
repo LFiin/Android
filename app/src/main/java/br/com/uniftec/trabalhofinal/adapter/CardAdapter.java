@@ -1,11 +1,9 @@
 package br.com.uniftec.trabalhofinal.adapter;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +12,6 @@ import java.util.Locale;
 import br.com.uniftec.trabalhofinal.R;
 import br.com.uniftec.trabalhofinal.adapter.holder.CardHolder;
 import br.com.uniftec.trabalhofinal.model.Produto;
-import br.com.uniftec.trabalhofinal.repositorio.ProdutoFactory;
-import br.com.uniftec.trabalhofinal.ui.ListaProdutosActivity;
 
 /**
  * Created by Fin on 06/11/2017.
@@ -38,11 +34,31 @@ public class CardAdapter extends RecyclerView.Adapter<CardHolder> {
     }
 
     @Override
-    public void onBindViewHolder(CardHolder holder, int position) {
+    public void onBindViewHolder(CardHolder holder, final int position) {
 
         holder.titulo.setText(listProdutos.get(position).getTitulo());
         holder.descricao.setText(listProdutos.get(position).getDescricao());
-        holder.preco.setText(String.format(Locale.getDefault(), "%f", listProdutos.get(position).getPreco()));
+        holder.preco.setText(String.format(Locale.getDefault(), "%.2f", listProdutos.get(position).getPreco()));
+        holder.btnAdd.setOnClickListener(new View.OnClickListener(){
+
+
+            @Override
+            public void onClick(View view) {
+                Produto p = new Produto();
+                p.criaProdutos(p);
+                insertItem(p);
+                updateItem(position);
+            }
+        });
+
+        holder.btnDelete.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                removerItem(position);
+            }
+        });
+
 
     }
 
@@ -50,6 +66,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardHolder> {
     public int getItemCount() {
 
         return listProdutos.size();
+
     }
 
     private void insertItem(Produto produto) {
@@ -59,6 +76,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardHolder> {
     }
 
     private void updateItem(int position) {
+
         notifyItemChanged(position);
     }
 
@@ -66,10 +84,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardHolder> {
         listProdutos.remove(position);
         notifyItemRemoved(position);
         notifyItemRangeChanged(position, listProdutos.size());
-    }
-
-    public void updateList(Produto produto) {
-        insertItem(produto);
     }
 
 

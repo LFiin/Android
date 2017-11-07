@@ -1,6 +1,7 @@
 package br.com.uniftec.trabalhofinal.model;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by lececatto on 28/10/2017.
@@ -29,6 +30,8 @@ public class Produto {
         this.preco = preco;
         this.descricao = descricao;
     }
+
+    public Produto(){}
 
     public int getId() {
         return id;
@@ -92,6 +95,29 @@ public class Produto {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public Produto criaProdutos(Produto p){
+         String[] titulos = {"Fone de Ouvido", "Memória RAM", "Processador", "Mouse", "Teclado", "Monitor"};
+         Double[] precos = {14.50, 200.45, 75.90, 25.00, 69.99, 1589.99, 700.00};
+         String[] descricoes = {"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n " +
+                "Etiam eget ligula eu lectus lobortis condimentum.\n Aliquam nonummy auctor massa.\"",
+                "\"Quis custodiet ipsos custodes?\""};
+
+        p.setTitulo(titulos[getRandomValue(0, 5)]);
+        p.setPreco(precos[getRandomValue(0, 5)]);
+        p.setDescricao(descricoes[getRandomValue(0, 2)]);
+
+        return p;
+
+
+       /* return new Produto(titulos[getRandomValue(0, 5)],
+                precos[getRandomValue(0, 5)],
+                descricoes[getRandomValue(0, 2)]);*/
+    }
+
+    private static int getRandomValue(int low, int high) {
+        return new Random().nextInt(high - low) + low;
     }
     
 }
