@@ -115,11 +115,7 @@ public class Produto implements Serializable{
         p.setPreco(precos[getRandomValue(0, 5)]);
         p.setPrecoDesconto(precosDesconto[getRandomValue(0, 5)]);
         p.setDescricao(descricoes[getRandomValue(0, 3)]);
-        p.setImagemPrincipal("C:\\Users\\Fin\\Desktop\\FTEC\\2017-2\\Android\\workspace\\TrabalhoFinal\\app\\src\\main\\res\\drawable\\fone1.jpg");
-
-      /*  System.out.println("Antes do p.setImagemPrincipal");
         p.setImagemPrincipal(imagensPrincipais[getRandomValue(0, 5)]);
-        System.out.println("Depois do p.setImagemPrincipal" + p.getImagemPrincipal());*/
 
         return p;
 

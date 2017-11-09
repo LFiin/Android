@@ -73,8 +73,6 @@ public class FinalizaCompraActivity extends AbstractActivity {
 
                 spinnerEndereco.setSelection(position);
 
-                alert(spinnerEndereco.getSelectedItem().toString());
-
             }
 
             @Override
@@ -145,7 +143,6 @@ public class FinalizaCompraActivity extends AbstractActivity {
             }
         });
 
-
         txtCVV = (TextView) findViewById(R.id.textview_finaliza_cvv);
         editCVV = (EditText) findViewById(R.id.edittext_finaliza_cvv);
 
@@ -159,6 +156,13 @@ public class FinalizaCompraActivity extends AbstractActivity {
                         !"".equals(editCVV.getText().toString())) {
 
                     alert("Pedido realizado com sucesso!");
+
+                    Intent intent = new Intent(meuContext, PedidosActivity.class);
+
+                    intent.putExtra(ProdutoActivity.PRODUTO_PARAMETER, produto);
+
+                    meuContext.startActivity(intent);
+
                 } else {
                     alert("Preenha todos os campos!");
                 }
@@ -184,7 +188,6 @@ public class FinalizaCompraActivity extends AbstractActivity {
                 onBackPressed();
             }
         });
-
 
     }
 

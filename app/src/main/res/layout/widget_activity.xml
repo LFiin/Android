@@ -10,17 +10,17 @@
         android:layout_centerInParent="true"
         android:orientation="horizontal">
 
-        <Button
+        <ImageView
             android:layout_width="160dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:text="@string/appwidget_text"/>
+            android:scaleType="centerCrop"
+            android:src="@drawable/fone1"/>
 
-        <Button
+        <ImageView
             android:layout_width="160dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:text="@string/appwidget_text"/>
+            android:scaleType="centerCrop"
+            android:src="@drawable/teclado1"/>
     </LinearLayout>
 
 
