@@ -27,7 +27,8 @@
             android:id="@+id/activity_produto_imagem"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="centerCrop"/>
+            android:src="@drawable/fone1"
+            android:scaleType="centerInside"/>
 
         <TextView
             android:id="@+id/activity_produto_titulo"
@@ -35,7 +36,7 @@
             android:layout_height="wrap_content"
             android:textColor="#000000"
             android:textSize="25dp"
-            android:layout_alignBottom="@id/activity_produto_imagem"/>
+            android:layout_below="@id/activity_produto_imagem"/>
 
     </RelativeLayout>
 
@@ -51,7 +52,22 @@
         android:layout_height="wrap_content"
         android:textColor="#000000"
         android:textSize="25dp"
-        android:layout_alignBottom="@id/activity_produto_descricao"/>
+        android:layout_below="@id/activity_produto_descricao"/>
 
+    <TextView
+        android:id="@+id/activity_produto_precoDesconto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:layout_below="@id/activity_produto_preco"/>
+
+    <Button
+        android:id="@+id/activity_produto_add_cesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:backgroundTint="#35b20e"
+        android:text="Adicionar ao carrinho"/>
 
 </LinearLayout>

@@ -35,7 +35,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         if (view == btLogin){
-            if(tLogin.getText().toString().equals("leandro")&&tSenha.getText().toString().equals("123")){
+            if((tLogin.getText().toString().equals("leandro")&&tSenha.getText().toString().equals("123")) ||
+            (tLogin.getText().toString().equals("fin")&&tSenha.getText().toString().equals("123")))
+            {
                 alert("Login efetuado com sucesso");
 
                 startActivity(new Intent(this, ListaProdutosActivity.class));

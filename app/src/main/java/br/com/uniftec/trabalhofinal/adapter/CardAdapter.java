@@ -74,19 +74,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardHolder> implements Vie
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(meuContext,"Antes do adapter.getItem", Toast.LENGTH_LONG).show();
 
                 Produto produto = getItem(position);
 
-                Toast.makeText(meuContext,"Depois do Adapter.getItem" + produto, Toast.LENGTH_LONG).show();
-
                 Intent intent = new Intent(meuContext, ProdutoActivity.class);
 
-                Toast.makeText(meuContext,"Ponto 3", Toast.LENGTH_LONG).show();
-
                 intent.putExtra(ProdutoActivity.PRODUTO_PARAMETER, produto);
-
-                Toast.makeText(meuContext,"Ponto 4", Toast.LENGTH_LONG).show();
 
                 meuContext.startActivity(intent);
             }
@@ -117,8 +110,9 @@ public class CardAdapter extends RecyclerView.Adapter<CardHolder> implements Vie
     }
 
     private void removerItem(int position) {
-        if (position == 0 ){
-            Toast.makeText(meuContext,"Não é possível remover este item", Toast.LENGTH_LONG).show();
+
+        if (listProdutos.size() <= 1 ){
+            Toast.makeText(meuContext,"Não é possível remover este item", LENGTH_LONG).show();
         } else {
             listProdutos.remove(position);
         }
@@ -131,4 +125,5 @@ public class CardAdapter extends RecyclerView.Adapter<CardHolder> implements Vie
     public void onClick(View view) {
 
     }
+
 }

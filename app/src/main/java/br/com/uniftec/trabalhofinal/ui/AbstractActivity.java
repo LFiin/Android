@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import br.com.uniftec.trabalhofinal.R;
 
@@ -15,6 +16,7 @@ import br.com.uniftec.trabalhofinal.R;
 public abstract class AbstractActivity extends AppCompatActivity{
 
     protected ActionBar actionBar;
+    public String title;
 
     @Override
     protected final void onCreate(@Nullable Bundle savedInstanceState) {

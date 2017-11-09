@@ -13,6 +13,8 @@
         <activity android:name=".ui.EnderecoActivity" />
         <activity android:name=".ui.ListaProdutosActivity" />
         <activity android:name=".ui.ProdutoActivity"/>
+        <activity android:name=".ui.CarrinhoActivity"/>
+        <activity android:name=".ui.FinalizaCompraActivity"/>
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

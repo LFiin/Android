@@ -10,4 +10,8 @@
 
     <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
+    <style name="BotaoRedondo">
+        <item name="android:background"> @drawable/roundedbutton</item>
+    </style>
+
 </resources>

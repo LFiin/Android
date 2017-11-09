@@ -99,6 +99,7 @@ public class Produto implements Serializable{
 
         String[] titulos = {"Headset Razer Kraken 7.1", "Memória Kingston HyperX FURY 4GB DDR4", "Processador Intel Core i9-7900x", "Mouse Logitech G402 Hyperion Fury", "Teclado HyperX Alloy Elite", "Monitor LED ASUS 24"};
         Double[] precos = {14.50, 200.45, 75.90, 25.00, 69.99, 1589.99, 700.00};
+        Double[] precosDesconto = {12.50, 180.45, 40.90, 18.00, 65.99, 1200.99, 500.00};
         String[] descricoes = {"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                "Etiam eget ligula eu lectus lobortis condimentum.", "Aliquam nonummy auctor massa.",
                "Quis custodiet ipsos custodes?"};
@@ -112,6 +113,7 @@ public class Produto implements Serializable{
 
         p.setTitulo(titulos[getRandomValue(0, 5)]);
         p.setPreco(precos[getRandomValue(0, 5)]);
+        p.setPrecoDesconto(precosDesconto[getRandomValue(0, 5)]);
         p.setDescricao(descricoes[getRandomValue(0, 3)]);
         p.setImagemPrincipal("C:\\Users\\Fin\\Desktop\\FTEC\\2017-2\\Android\\workspace\\TrabalhoFinal\\app\\src\\main\\res\\drawable\\fone1.jpg");
 
