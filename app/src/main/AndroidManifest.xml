@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.CadastroActivity"/>
-        <activity android:name=".ui.EnderecoActivity"/>
-        <activity android:name=".ui.ListaProdutosActivity"/>
+        <activity android:name=".ui.CadastroActivity" />
+        <activity android:name=".ui.EnderecoActivity" />
+        <activity android:name=".ui.ListaProdutosActivity" />
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name="layout.WidgetActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_activity_info" />
+        </receiver>
     </application>
 
 </manifest>
