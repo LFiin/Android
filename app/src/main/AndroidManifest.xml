@@ -12,6 +12,7 @@
         <activity android:name=".ui.CadastroActivity"/>
         <activity android:name=".ui.EnderecoActivity"/>
         <activity android:name=".ui.ListaProdutosActivity"/>
+        <activity android:name=".ui.ProdutoActivity"/>
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

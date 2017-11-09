@@ -38,10 +38,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if(tLogin.getText().toString().equals("leandro")&&tSenha.getText().toString().equals("123")){
                 alert("Login efetuado com sucesso");
 
-                for (int i = 0; i < 10; i ++){
-                    Produto produto = new Produto("Produto " + i, 14.95 + i, "DESCRICAO DESCRICAODESCRICAODESCRICAODESCRICAO DESCRICAO");
-                }
-
                 startActivity(new Intent(this, ListaProdutosActivity.class));
             }else{
                 alert("Login ou senha incorretos");

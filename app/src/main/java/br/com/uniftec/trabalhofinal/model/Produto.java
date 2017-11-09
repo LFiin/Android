@@ -1,13 +1,17 @@
 package br.com.uniftec.trabalhofinal.model;
 
+import android.widget.Toast;
+
+import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
+
 
 /**
  * Created by lececatto on 28/10/2017.
  */
 
-public class Produto {
+public class Produto implements Serializable{
 
     private int id;
 
@@ -24,12 +28,6 @@ public class Produto {
     private Double precoDesconto;
 
     private Categoria categoria;
-
-    public Produto(String titulo, Double preco, String descricao) {
-        this.titulo = titulo;
-        this.preco = preco;
-        this.descricao = descricao;
-    }
 
     public Produto(){}
 
@@ -98,26 +96,37 @@ public class Produto {
     }
 
     public Produto criaProdutos(Produto p){
-         String[] titulos = {"Fone de Ouvido", "Memória RAM", "Processador", "Mouse", "Teclado", "Monitor"};
-         Double[] precos = {14.50, 200.45, 75.90, 25.00, 69.99, 1589.99, 700.00};
-         String[] descricoes = {"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n " +
-                "Etiam eget ligula eu lectus lobortis condimentum.\n Aliquam nonummy auctor massa.\"",
-                "\"Quis custodiet ipsos custodes?\""};
+
+        String[] titulos = {"Headset Razer Kraken 7.1", "Memória Kingston HyperX FURY 4GB DDR4", "Processador Intel Core i9-7900x", "Mouse Logitech G402 Hyperion Fury", "Teclado HyperX Alloy Elite", "Monitor LED ASUS 24"};
+        Double[] precos = {14.50, 200.45, 75.90, 25.00, 69.99, 1589.99, 700.00};
+        String[] descricoes = {"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+               "Etiam eget ligula eu lectus lobortis condimentum.", "Aliquam nonummy auctor massa.",
+               "Quis custodiet ipsos custodes?"};
+
+        String[] imagensPrincipais = {"C:\\Users\\Fin\\Desktop\\FTEC\\2017-2\\Android\\workspace\\TrabalhoFinal\\app\\src\\main\\res\\drawable\\fone1.jpg",
+                "C:\\Users\\Fin\\Desktop\\FTEC\\2017-2\\Android\\workspace\\TrabalhoFinal\\app\\src\\main\\res\\drawable\\teclado1.jpg",
+                "C:\\Users\\Fin\\Desktop\\FTEC\\2017-2\\Android\\workspace\\TrabalhoFinal\\app\\src\\main\\res\\drawable\\mouse11.jpg",
+                "C:\\Users\\Fin\\Desktop\\FTEC\\2017-2\\Android\\workspace\\TrabalhoFinal\\app\\src\\main\\res\\drawable\\processador1.jpg",
+                "C:\\Users\\Fin\\Desktop\\FTEC\\2017-2\\Android\\workspace\\TrabalhoFinal\\app\\src\\main\\res\\drawable\\monitor1.jpg",
+                "C:\\Users\\Fin\\Desktop\\FTEC\\2017-2\\Android\\workspace\\TrabalhoFinal\\app\\src\\main\\res\\drawable\\memoria1.jpg"};
 
         p.setTitulo(titulos[getRandomValue(0, 5)]);
         p.setPreco(precos[getRandomValue(0, 5)]);
-        p.setDescricao(descricoes[getRandomValue(0, 2)]);
+        p.setDescricao(descricoes[getRandomValue(0, 3)]);
+        p.setImagemPrincipal("C:\\Users\\Fin\\Desktop\\FTEC\\2017-2\\Android\\workspace\\TrabalhoFinal\\app\\src\\main\\res\\drawable\\fone1.jpg");
+
+      /*  System.out.println("Antes do p.setImagemPrincipal");
+        p.setImagemPrincipal(imagensPrincipais[getRandomValue(0, 5)]);
+        System.out.println("Depois do p.setImagemPrincipal" + p.getImagemPrincipal());*/
 
         return p;
 
-
-       /* return new Produto(titulos[getRandomValue(0, 5)],
-                precos[getRandomValue(0, 5)],
-                descricoes[getRandomValue(0, 2)]);*/
     }
 
     private static int getRandomValue(int low, int high) {
         return new Random().nextInt(high - low) + low;
     }
-    
+
+
 }
+

@@ -1,9 +1,14 @@
 package br.com.uniftec.trabalhofinal.adapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,24 +17,31 @@ import java.util.Locale;
 import br.com.uniftec.trabalhofinal.R;
 import br.com.uniftec.trabalhofinal.adapter.holder.CardHolder;
 import br.com.uniftec.trabalhofinal.model.Produto;
+import br.com.uniftec.trabalhofinal.ui.ListaProdutosActivity;
+import br.com.uniftec.trabalhofinal.ui.ProdutoActivity;
+
+import static android.support.v4.content.ContextCompat.startActivity;
+import static android.widget.Toast.*;
 
 /**
  * Created by Fin on 06/11/2017.
  */
 
-public class CardAdapter extends RecyclerView.Adapter<CardHolder> {
+public class CardAdapter extends RecyclerView.Adapter<CardHolder> implements View.OnClickListener{
 
+    private Context meuContext;
     private final List<Produto> listProdutos;
 
-    public CardAdapter(ArrayList<Produto> produtos){
 
+    public CardAdapter(Context context, ArrayList<Produto> produtos){
+        meuContext = context;
         listProdutos = produtos;
     }
 
 
     @Override
     public CardHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new CardHolder(LayoutInflater.from(parent.getContext())
+        return new CardHolder(meuContext, LayoutInflater.from(parent.getContext())
         .inflate(R.layout.main_card_view, parent, false));
     }
 
@@ -38,7 +50,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardHolder> {
 
         holder.titulo.setText(listProdutos.get(position).getTitulo());
         holder.descricao.setText(listProdutos.get(position).getDescricao());
-        holder.preco.setText(String.format(Locale.getDefault(), "%.2f", listProdutos.get(position).getPreco()));
+        holder.preco.setText("R$ " + String.format(Locale.getDefault(), "%.2f", listProdutos.get(position).getPreco()));
         holder.btnAdd.setOnClickListener(new View.OnClickListener(){
 
 
@@ -59,7 +71,31 @@ public class CardAdapter extends RecyclerView.Adapter<CardHolder> {
             }
         });
 
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(meuContext,"Antes do adapter.getItem", Toast.LENGTH_LONG).show();
 
+                Produto produto = getItem(position);
+
+                Toast.makeText(meuContext,"Depois do Adapter.getItem" + produto, Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(meuContext, ProdutoActivity.class);
+
+                Toast.makeText(meuContext,"Ponto 3", Toast.LENGTH_LONG).show();
+
+                intent.putExtra(ProdutoActivity.PRODUTO_PARAMETER, produto);
+
+                Toast.makeText(meuContext,"Ponto 4", Toast.LENGTH_LONG).show();
+
+                meuContext.startActivity(intent);
+            }
+        });
+
+    }
+
+    public Produto getItem(int position){
+        return listProdutos.get(position);
     }
 
     @Override
@@ -81,11 +117,18 @@ public class CardAdapter extends RecyclerView.Adapter<CardHolder> {
     }
 
     private void removerItem(int position) {
-        listProdutos.remove(position);
+        if (position == 0 ){
+            Toast.makeText(meuContext,"Não é possível remover este item", Toast.LENGTH_LONG).show();
+        } else {
+            listProdutos.remove(position);
+        }
+
         notifyItemRemoved(position);
         notifyItemRangeChanged(position, listProdutos.size());
     }
 
+    @Override
+    public void onClick(View view) {
 
-
+    }
 }
