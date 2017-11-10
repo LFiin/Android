@@ -33,6 +33,7 @@ public class ProdutoActivity extends AbstractActivity {
     private TextView txtDescricao;
     private Toolbar toolbar;
     private Button btnAddCesta;
+    private Button btnVoltar;
     public Context meuContext;
 
 
@@ -68,6 +69,14 @@ public class ProdutoActivity extends AbstractActivity {
 
                 meuContext.startActivity(intent);
 
+            }
+        });
+
+        btnVoltar = (Button) findViewById(R.id.activity_produto_voltar);
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
 

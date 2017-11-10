@@ -27,6 +27,7 @@
             android:id="@+id/activity_produto_imagem"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_margin="5dp"
             android:src="@drawable/fone1"
             android:scaleType="centerInside"/>
 
@@ -44,6 +45,7 @@
         android:id="@+id/activity_produto_descricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:textSize="20dp"/>
 
     <TextView
@@ -51,6 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#000000"
+        android:layout_margin="5dp"
         android:textSize="25dp"
         android:layout_below="@id/activity_produto_descricao"/>
 
@@ -59,15 +62,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#000000"
+        android:layout_margin="5dp"
         android:textSize="25dp"
         android:layout_below="@id/activity_produto_preco"/>
 
-    <Button
-        android:id="@+id/activity_produto_add_cesta"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:backgroundTint="#35b20e"
-        android:text="Adicionar ao carrinho"/>
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/activity_produto_voltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:backgroundTint="#f04d33"
+            android:text="Voltar"/>
+
+        <Button
+            android:id="@+id/activity_produto_add_cesta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_toRightOf="@id/activity_produto_voltar"
+            android:backgroundTint="#35b20e"
+            android:text="Adicionar ao carrinho"/>
+
+
+    </RelativeLayout>
+
+
 
 </LinearLayout>

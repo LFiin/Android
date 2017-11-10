@@ -62,7 +62,7 @@ public class PedidosActivity extends AbstractActivity {
         txtDataPedido.setText(pedido.getData());
 
         txtEndereco = (TextView) findViewById(R.id.text_pedido_entrega);
-        txtEndereco.setText("Rua José Bisol, 1985, Ap 42 - Lourdes - CAxias do Sul/RS");
+        txtEndereco.setText("Rua José Bisol, 1985, Ap 42 - Lourdes - Caxias do Sul/RS");
 
         txtTotal = (TextView) findViewById(R.id.text_pedido_total);
 
