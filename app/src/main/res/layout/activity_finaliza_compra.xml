@@ -33,61 +33,61 @@
             android:textSize="18dp"
             android:text="Endereço de entrega:"/>
 
-
         <Spinner
             android:id="@+id/spinner_finaliza_endereco"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginBottom="13dp"/>
 
-
-        <TextView
-            android:id="@+id/textview_finaliza_numero_cartao"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/text_input_numero_cartao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="13dp"
-            android:textSize="18dp"
-            android:text="Número do Cartão de Crédito"/>
+            android:hint="@string/cartao">
 
-        <EditText
-            android:id="@+id/edittext_finaliza_numero_cartao"
+            <EditText
+                android:id="@+id/edittext_finaliza_numero_cartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="13dp"
+                android:ems="10"
+                android:maxLength="19"
+                android:inputType="textNoSuggestions" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/text_input_data_expiracao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="13dp"
-            android:ems="10"
-            android:maxLength="19"
-            android:inputType="textNoSuggestions" />
+            android:hint="@string/dataExpiracao">
 
-        <TextView
-            android:id="@+id/textview_finaliza_data_expiracao"
+            <EditText
+                android:id="@+id/edittext_finaliza_data_expiracao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="13dp"
+                android:maxLength="5"
+                android:inputType="date"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/text_input_cvv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="13dp"
-            android:textSize="18dp"
-            android:text="Data de expiração (MM/AAAA)"/>
+            android:hint="@string/cvv">
 
-        <EditText
-            android:id="@+id/edittext_finaliza_data_expiracao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="13dp"
-            android:maxLength="5"
-            android:inputType="date"/>
+            <EditText
+                android:id="@+id/edittext_finaliza_cvv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="3"
+                android:inputType="number"/>
 
-        <TextView
-            android:id="@+id/textview_finaliza_cvv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="13dp"
-            android:textSize="18dp"
-            android:text="CVV"/>
 
-        <EditText
-            android:id="@+id/edittext_finaliza_cvv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLength="3"
-            android:inputType="number"/>
+        </android.support.design.widget.TextInputLayout>
+
 
         <RelativeLayout
             android:layout_width="wrap_content"

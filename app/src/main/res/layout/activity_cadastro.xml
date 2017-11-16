@@ -8,56 +8,74 @@
     android:padding="16dp"
     tools:context="br.com.uniftec.trabalhofinal.ui.CadastroActivity">
 
-    <TextView
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/email"/>
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tEmail"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email"
+            android:id="@+id/tEmail"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/senha"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:id="@+id/tSenha"/>
 
-    <TextView
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_senha"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/nome"/>
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tNome"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/senha"
+            android:id="@+id/tSenha"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/cpf"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tCpf"/>
 
-    <TextView
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_nome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/telefone" />
+        android:layout_height="wrap_content">
 
-    <EditText
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nome"
+            android:id="@+id/tNome"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_cpf"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tTelefone"/>
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cpf"
+            android:id="@+id/tCpf"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_telefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/telefone"
+            android:id="@+id/tTelefone"/>
+
+    </android.support.design.widget.TextInputLayout>
+
 
     <Button
         android:id="@+id/btAddNovoEndereco"

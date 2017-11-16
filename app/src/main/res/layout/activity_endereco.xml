@@ -8,65 +8,83 @@
     tools:context=".ui.EnderecoActivity"
     android:padding="16dp">
 
-    <TextView
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_rua"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/rua"/>
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tRua"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/rua"
+            android:id="@+id/tRua"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/numero"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <EditText
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_numero"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tNumero"/>
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/complemento"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/numero"
+            android:id="@+id/tNumero"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tComplemento"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <TextView
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_complemento"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/bairro"/>
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tBairro"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/complemento"
+            android:id="@+id/tComplemento"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/cidade" />
+    </android.support.design.widget.TextInputLayout>
 
-    <EditText
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_bairro"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tCidade"/>
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/estado" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/bairro"
+            android:id="@+id/tBairro"/>
 
-    <EditText
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_cidade"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tEstado"/>
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cidade"
+            android:id="@+id/tCidade"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_estado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/estado"
+            android:id="@+id/tEstado"/>
+
+    </android.support.design.widget.TextInputLayout>
 
     <LinearLayout
         android:orientation="horizontal"

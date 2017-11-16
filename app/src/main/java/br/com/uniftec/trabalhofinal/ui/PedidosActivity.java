@@ -78,6 +78,7 @@ public class PedidosActivity extends AbstractActivity {
         txtPreco.setText("R$ " + produto.getPreco().toString());
 
         toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        getSupportActionBar().setTitle("Meus Pedidos");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

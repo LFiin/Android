@@ -1,6 +1,7 @@
 package br.com.uniftec.trabalhofinal.ui;
 
 import android.content.Intent;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,16 +19,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText tLogin;
     private EditText tSenha;
     private TextView tNovoUsuario;
+    private TextInputLayout tilUsuario;
+    private TextInputLayout tilSenha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        btLogin = (Button) findViewById(R.id.btLogin);
-        btLogin.setOnClickListener(this);
+        tilUsuario = (TextInputLayout) findViewById(R.id.input_layout_usuario);
+        tilSenha = (TextInputLayout) findViewById(R.id.input_layout_senha);
+
         tLogin = (EditText) findViewById(R.id.tLogin);
         tSenha = (EditText) findViewById(R.id.tSenha);
+
+        btLogin = (Button) findViewById(R.id.btLogin);
+        btLogin.setOnClickListener(this);
+
         tNovoUsuario = (TextView) findViewById(R.id.tNovoUsuario);
         tNovoUsuario.setOnClickListener(this);
     }
