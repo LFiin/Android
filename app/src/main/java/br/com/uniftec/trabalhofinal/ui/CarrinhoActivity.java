@@ -81,7 +81,6 @@ public class CarrinhoActivity extends AbstractActivity {
         });
 
         toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        getSupportActionBar().setTitle("Carrinho de Compras");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

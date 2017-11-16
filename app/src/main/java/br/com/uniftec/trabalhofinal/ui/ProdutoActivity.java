@@ -81,7 +81,6 @@ public class ProdutoActivity extends AbstractActivity {
         });
 
         toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        getSupportActionBar().setTitle("Detalhes do Produto");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

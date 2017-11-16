@@ -2,7 +2,6 @@ package br.com.uniftec.trabalhofinal.ui;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -33,13 +32,13 @@ import static br.com.uniftec.trabalhofinal.ui.CarrinhoActivity.PRODUTO_PARAMETER
 public class FinalizaCompraActivity extends AbstractActivity {
 
 
-
+    private TextView txtEndereço;
     private Spinner spinnerEndereco;
-    private TextInputLayout tilNumeroCartao;
-    private TextInputLayout tilDataExpiracao;
-    private TextInputLayout tilCVV;
+    private TextView txtCartaoCredito;
     private EditText editCartaoCredito;
+    private TextView txtDataExpiracao;
     private EditText editDataExpiracao;
+    private TextView txtCVV;
     private EditText editCVV;
     private Button btnCancelar;
     private Button btnConfirmar;
@@ -65,6 +64,8 @@ public class FinalizaCompraActivity extends AbstractActivity {
 
         }
 
+        txtEndereço = (TextView) findViewById(R.id.textview_finaliza_endereço);
+
         spinnerEndereco = (Spinner) findViewById(R.id.spinner_finaliza_endereco);
         spinnerEndereco.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -86,10 +87,8 @@ public class FinalizaCompraActivity extends AbstractActivity {
 
         spinnerEndereco.setAdapter(adapter);
 
-        tilNumeroCartao = (TextInputLayout) findViewById(R.id.text_input_numero_cartao);
-        tilDataExpiracao = (TextInputLayout) findViewById(R.id.text_input_data_expiracao);
-        tilCVV = (TextInputLayout) findViewById(R.id.text_input_cvv);
 
+        txtCartaoCredito = (TextView) findViewById(R.id.textview_finaliza_numero_cartao);
         editCartaoCredito = (EditText) findViewById(R.id.edittext_finaliza_numero_cartao);
         editCartaoCredito.addTextChangedListener(new TextWatcher() {
             private boolean lock;
@@ -116,6 +115,7 @@ public class FinalizaCompraActivity extends AbstractActivity {
             }
         });
 
+        txtDataExpiracao = (TextView) findViewById(R.id.textview_finaliza_data_expiracao);
         editDataExpiracao = (EditText) findViewById(R.id.edittext_finaliza_data_expiracao);
         editDataExpiracao.addTextChangedListener(new TextWatcher() {
             @Override
@@ -143,6 +143,7 @@ public class FinalizaCompraActivity extends AbstractActivity {
             }
         });
 
+        txtCVV = (TextView) findViewById(R.id.textview_finaliza_cvv);
         editCVV = (EditText) findViewById(R.id.edittext_finaliza_cvv);
 
         btnConfirmar = (Button) findViewById(R.id.button_finaliza_confirma);
@@ -181,7 +182,6 @@ public class FinalizaCompraActivity extends AbstractActivity {
         });
 
         toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        getSupportActionBar().setTitle("Finaliza Compra");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

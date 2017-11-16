@@ -2,9 +2,7 @@ package br.com.uniftec.trabalhofinal.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,30 +24,11 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
     private EditText tNome;
     private EditText tCpf;
     private EditText tTelefone;
-    private TextInputLayout tilEmail;
-    private TextInputLayout tilSenha;
-    private TextInputLayout tilNome;
-    private TextInputLayout tilCpf;
-    private TextInputLayout tilTelefone;
-    private Toolbar toolbar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-
-        tilEmail = (TextInputLayout) findViewById(R.id.text_input_email);
-        tilSenha = (TextInputLayout) findViewById(R.id.text_input_senha);
-        tilNome = (TextInputLayout) findViewById(R.id.text_input_nome);
-        tilCpf = (TextInputLayout) findViewById(R.id.text_input_cpf);
-        tilTelefone = (TextInputLayout) findViewById(R.id.text_input_telefone);
-
-        tEmail = (EditText) findViewById(R.id.tEmail);
-        tSenha = (EditText) findViewById(R.id.tSenha);
-        tNome = (EditText) findViewById(R.id.tNome);
-        tCpf = (EditText) findViewById(R.id.tCpf);
-        tTelefone = (EditText) findViewById(R.id.tTelefone);
 
         btAddNovoEndereco = (Button) findViewById(R.id.btAddNovoEndereco);
         btAddNovoEndereco.setOnClickListener(this);
@@ -57,7 +36,11 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
         btCadastrar.setOnClickListener(this);
         btCancelar = (Button) findViewById(R.id.btCancelar);
         btCancelar.setOnClickListener(this);
-
+        tEmail = (EditText) findViewById(R.id.tEmail);
+        tSenha = (EditText) findViewById(R.id.tSenha);
+        tNome = (EditText) findViewById(R.id.tNome);
+        tCpf = (EditText) findViewById(R.id.tCpf);
+        tTelefone = (EditText) findViewById(R.id.tTelefone);
     }
 
     @Override

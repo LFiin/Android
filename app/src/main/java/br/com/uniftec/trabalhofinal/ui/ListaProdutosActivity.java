@@ -18,29 +18,19 @@ import br.com.uniftec.trabalhofinal.model.Produto;
  * Created by Fin on 06/11/2017.
  */
 
-public class ListaProdutosActivity extends AbstractActivity {
+public class ListaProdutosActivity extends AppCompatActivity {
 
     private CardAdapter cardAdapter;
     private LinearLayoutManager layoutManager;
     private RecyclerView meuRecyclerView;
     public static ArrayList<Produto> dados;
     private Context context;
-    private Toolbar toolbar;
 
-    @Override
-    protected void setupView() {
-        context = this;
 
+    protected void onCreate (Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.acticity_recycler_view_layout);
         meuRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_layout_recycler);
-
-        toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        getSupportActionBar().setTitle("Lista Produtos");
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
 
         layoutManager = new LinearLayoutManager(this);
         meuRecyclerView.setLayoutManager(layoutManager);
@@ -55,11 +45,6 @@ public class ListaProdutosActivity extends AbstractActivity {
         cardAdapter = new CardAdapter(this, dados);
         meuRecyclerView.setAdapter(cardAdapter);
 
-    }
-
-    @Override
-    protected int getLayoutRes() {
-        return R.layout.acticity_recycler_view_layout;
     }
 
 }
