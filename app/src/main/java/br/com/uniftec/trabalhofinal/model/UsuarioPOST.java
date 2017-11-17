@@ -8,7 +8,7 @@ import java.util.List;
 
 public class UsuarioPOST {
 
-    public UsuarioPOST(String cpf, String email, List<EnderecoPOST> enderecos, String id, String nome, String telefone) {
+    public UsuarioPOST(String cpf, String email, List<EnderecoPOST> enderecos, Long id, String nome, String telefone) {
         this.cpf = cpf;
         this.email = email;
         this.enderecos = enderecos;
@@ -23,7 +23,7 @@ public class UsuarioPOST {
 
     private List<EnderecoPOST> enderecos;
 
-    private String id;
+    private Long id;
 
     private String nome;
 
@@ -53,11 +53,11 @@ public class UsuarioPOST {
         this.enderecos = enderecos;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

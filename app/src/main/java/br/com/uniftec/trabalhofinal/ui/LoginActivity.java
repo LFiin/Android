@@ -1,8 +1,8 @@
 package br.com.uniftec.trabalhofinal.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.uniftec.trabalhofinal.R;
-import br.com.uniftec.trabalhofinal.model.Produto;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -40,6 +39,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             {
                 alert("Login efetuado com sucesso");
 
+                //TESTE
+                //UsuarioPUT usuario = new UsuarioPUT("024.955.490-98", "leandrocecatto@hotmail.com", "Leandro Cecatto", "senha", "996998367");
+
+                //IncluirUsuarioTask incluirUsuarioTask = new IncluirUsuarioTask(this);
+                //incluirUsuarioTask.execute(usuario);
+
+                //TESTE
                 startActivity(new Intent(this, ListaProdutosActivity.class));
             }else{
                 alert("Login ou senha incorretos");
