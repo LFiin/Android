@@ -49,8 +49,10 @@ public class IncluirUsuarioTask extends AsyncTask<UsuarioPUT, Void, Resposta<Str
     @Override
     protected void onPostExecute(Resposta<String> resposta) {
 
-        if(resposta.getStatus() == ResponseStatus.SUCESS){
-            delegate.incluirUsuarioSucesso(resposta.getData());
+        if(resposta.getStatus() == ResponseStatus.SUCCESS){
+            // ENQUANTO ERRO NO SERVIDOR
+            //delegate.incluirUsuarioSucesso(resposta.getData());
+            delegate.incluirUsuarioSucesso(resposta.getMessage());
         } else {
             delegate.incluirUsuarioFalha(resposta.getMessage());
         }

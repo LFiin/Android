@@ -6,6 +6,6 @@ package br.com.uniftec.trabalhofinal.model;
 
 public enum ResponseStatus {
 
-    SUCESS, ERROR
+    SUCCESS, ERROR
 
 }

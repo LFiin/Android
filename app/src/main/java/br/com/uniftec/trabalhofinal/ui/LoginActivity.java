@@ -39,13 +39,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             {
                 alert("Login efetuado com sucesso");
 
-                //TESTE
-                //UsuarioPUT usuario = new UsuarioPUT("024.955.490-98", "leandrocecatto@hotmail.com", "Leandro Cecatto", "senha", "996998367");
-
-                //IncluirUsuarioTask incluirUsuarioTask = new IncluirUsuarioTask(this);
-                //incluirUsuarioTask.execute(usuario);
-
-                //TESTE
                 startActivity(new Intent(this, ListaProdutosActivity.class));
             }else{
                 alert("Login ou senha incorretos");

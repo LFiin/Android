@@ -9,12 +9,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.uniftec.trabalhofinal.R;
+import br.com.uniftec.trabalhofinal.model.UsuarioPUT;
+import br.com.uniftec.trabalhofinal.task.IncluirUsuarioTask;
 
 /**
  * Created by lececatto on 28/10/2017.
  */
 
-public class CadastroActivity extends AppCompatActivity implements View.OnClickListener{
+public class CadastroActivity extends AppCompatActivity implements View.OnClickListener, IncluirUsuarioTask.IncluirUsuarioDelegate{
 
     private Button btAddNovoEndereco;
     private Button btCadastrar;
@@ -49,7 +51,16 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
             if (!"".equals(tEmail.getText().toString()) && !"".equals(tSenha.getText().toString())
                     && !"".equals(tNome.getText().toString()) && !"".equals(tCpf.getText().toString())
                     && !"".equals(tTelefone.getText().toString())) {
-                alert("Cadastro realizado com sucesso");
+
+                UsuarioPUT usuarioPUT = new UsuarioPUT( tCpf.getText().toString()
+                                                      , tEmail.getText().toString()
+                                                      , tNome.getText().toString()
+                                                      , tSenha.getText().toString()
+                                                      , tTelefone.getText().toString());
+
+                IncluirUsuarioTask incluirUsuarioTask = new IncluirUsuarioTask(this);
+                incluirUsuarioTask.execute(usuarioPUT);
+
                 finish();
             } else {
                 alert("Todos os campos devem estar preenchidos");
@@ -63,5 +74,15 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
 
     private void alert(String s){
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void incluirUsuarioSucesso(String token) {
+        alert("Usuário incluído com sucesso: " + token);
+    }
+
+    @Override
+    public void incluirUsuarioFalha(String erro) {
+        alert(erro);
     }
 }
