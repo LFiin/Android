@@ -10,8 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.uniftec.trabalhofinal.R;
+import br.com.uniftec.trabalhofinal.model.LoginPOST;
+import br.com.uniftec.trabalhofinal.task.ValidarLoginTask;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener, ValidarLoginTask.ValidarLoginDelegate{
 
     private Button btLogin;
     private EditText tLogin;
@@ -34,14 +36,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         if (view == btLogin){
-            if((tLogin.getText().toString().equals("leandro")&&tSenha.getText().toString().equals("123")) ||
-            (tLogin.getText().toString().equals("fin")&&tSenha.getText().toString().equals("123")))
-            {
-                alert("Login efetuado com sucesso");
+            if(!"".equals(tLogin.getText().toString()) &&  !"".equals(tSenha.getText().toString())){
 
-                startActivity(new Intent(this, ListaProdutosActivity.class));
+                LoginPOST loginPOST = new LoginPOST( tLogin.getText().toString()
+                                                   , tSenha.getText().toString());
+
+                ValidarLoginTask validarLoginTask = new ValidarLoginTask(this);
+                validarLoginTask.execute(loginPOST);
+
             }else{
-                alert("Login ou senha incorretos");
+                alert("Favor preencher os campos Usuario e Senha!");
             }
         }else{
             startActivity(new Intent(this, CadastroActivity.class));
@@ -50,5 +54,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void alert(String s){
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void validarUsuarioSucesso(String token) {
+        alert("Login efetuado com sucesso: " + token);
+
+        startActivity(new Intent(this, ListaProdutosActivity.class));
+    }
+
+    @Override
+    public void validarUsuarioFalha(String erro) {
+        alert(erro);
     }
 }
