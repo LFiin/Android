@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.uniftec.trabalhofinal.R;
+import br.com.uniftec.trabalhofinal.model.EnderecoPUT;
 
 /**
  * Created by lececatto on 02/11/2017.
@@ -46,6 +47,7 @@ public class EnderecoActivity extends AppCompatActivity implements View.OnClickL
             if (!"".equals(tRua.getText().toString())&&!"".equals(tNumero.getText().toString())
                     &&!"".equals(tComplemento.getText().toString())&&!"".equals(tBairro.getText().toString())
                     &&!"".equals(tCidade.getText().toString())&&!"".equals(tEstado.getText().toString())) {
+
                 alert("Cadastro de endereço realizado com sucesso");
                 finish();
             } else {

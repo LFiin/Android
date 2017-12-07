@@ -14,9 +14,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.CadastroActivity" />
         <activity android:name=".ui.EnderecoActivity" />
-        <activity android:name=".ui.ListaProdutosActivity" />
         <activity android:name=".ui.ProdutoActivity"/>
         <activity android:name=".ui.CarrinhoActivity"/>
+        <activity android:name=".ui.ListaProdutosActivity"/>
         <activity android:name=".ui.FinalizaCompraActivity"/>
         <activity android:name=".ui.PedidosActivity"/>
         <activity android:name=".ui.LoginActivity">

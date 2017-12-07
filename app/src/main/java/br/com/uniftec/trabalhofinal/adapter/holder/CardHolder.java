@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -45,6 +47,8 @@ public class CardHolder extends RecyclerView.ViewHolder implements AdapterView.O
 
     public ImageButton btnDelete;
 
+    private Toolbar toolbar;
+
     public CardHolder(Context context, View itemView) {
         super(itemView);
         meuContext = context;
@@ -62,7 +66,6 @@ public class CardHolder extends RecyclerView.ViewHolder implements AdapterView.O
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-
-
     }
+
 }

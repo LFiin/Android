@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import br.com.uniftec.trabalhofinal.model.Produto;
  * Created by Fin on 06/11/2017.
  */
 
-public class ListaProdutosActivity extends AppCompatActivity {
+public class ListaProdutosActivity extends AbstractActivity {
 
     private CardAdapter cardAdapter;
     private LinearLayoutManager layoutManager;
@@ -26,14 +27,17 @@ public class ListaProdutosActivity extends AppCompatActivity {
     public static ArrayList<Produto> dados;
     private Context context;
 
+    @Override
+    protected void setupView() {
+        context = this;
 
-    protected void onCreate (Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.acticity_recycler_view_layout);
         meuRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_layout_recycler);
 
         layoutManager = new LinearLayoutManager(this);
         meuRecyclerView.setLayoutManager(layoutManager);
+
+        // aqui vai carregar os produtos
 
         dados = new ArrayList<>(5);
 
@@ -45,6 +49,24 @@ public class ListaProdutosActivity extends AppCompatActivity {
         cardAdapter = new CardAdapter(this, dados);
         meuRecyclerView.setAdapter(cardAdapter);
 
+        actionBar.setTitle("Lista de Produtos");
+
+    }
+
+    @Override
+    protected int getLayoutRes() {
+        return R.layout.acticity_recycler_view_layout;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == android.R.id.home){
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

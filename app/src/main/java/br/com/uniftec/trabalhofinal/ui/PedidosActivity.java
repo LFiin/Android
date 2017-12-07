@@ -2,6 +2,7 @@ package br.com.uniftec.trabalhofinal.ui;
 
 import android.content.Context;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -77,13 +78,8 @@ public class PedidosActivity extends AbstractActivity {
         txtPreco = (TextView) findViewById(R.id.pedidos_preco);
         txtPreco.setText("R$ " + produto.getPreco().toString());
 
-        toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        actionBar.setTitle("Seus Pedidos");
+
 
     }
 
@@ -107,5 +103,16 @@ public class PedidosActivity extends AbstractActivity {
 
         return total;
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == android.R.id.home){
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

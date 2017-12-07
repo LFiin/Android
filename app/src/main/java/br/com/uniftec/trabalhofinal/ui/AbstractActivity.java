@@ -16,7 +16,6 @@ import br.com.uniftec.trabalhofinal.R;
 public abstract class AbstractActivity extends AppCompatActivity{
 
     protected ActionBar actionBar;
-    public String title;
 
     @Override
     protected final void onCreate(@Nullable Bundle savedInstanceState) {

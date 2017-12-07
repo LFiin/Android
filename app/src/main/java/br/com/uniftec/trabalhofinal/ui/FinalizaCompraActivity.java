@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -181,19 +182,25 @@ public class FinalizaCompraActivity extends AbstractActivity {
             }
         });
 
-        toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        actionBar.setTitle("Finaliza Compra");
+
 
     }
 
     @Override
     protected int getLayoutRes() {
         return R.layout.activity_finaliza_compra;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == android.R.id.home){
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void alert(String s){

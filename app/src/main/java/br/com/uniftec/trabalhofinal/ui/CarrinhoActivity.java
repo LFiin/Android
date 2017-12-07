@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -36,7 +37,6 @@ public class CarrinhoActivity extends AbstractActivity {
     private ImageView imagem;
     private TextView txtTitulo;
     private TextView txtPreco;
-    private Toolbar toolbar;
     private TextView txtTotal;
     private Context meuContext;
     private ImageButton btnDel;
@@ -80,13 +80,8 @@ public class CarrinhoActivity extends AbstractActivity {
             }
         });
 
-        toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        actionBar.setTitle("Carrinho de Compras");
+
     }
 
     @Override
@@ -94,4 +89,14 @@ public class CarrinhoActivity extends AbstractActivity {
         return R.layout.activity_carrinho;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == android.R.id.home){
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
