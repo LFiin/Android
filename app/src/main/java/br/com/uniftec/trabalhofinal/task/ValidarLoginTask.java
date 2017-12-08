@@ -49,9 +49,7 @@ public class ValidarLoginTask extends AsyncTask<LoginPOST, Void, Resposta<String
     @Override
     protected void onPostExecute(Resposta<String> resposta) {
         if (resposta.getStatus() == ResponseStatus.SUCCESS){
-            // ENQUANTO ERRO NO SERVIDOR
-            //delegate.incluirUsuarioSucesso(resposta.getData());
-            delegate.validarUsuarioSucesso(resposta.getMessage());
+            delegate.validarUsuarioSucesso(resposta.getData());
         } else {
             delegate.validarUsuarioFalha(resposta.getMessage());
         }

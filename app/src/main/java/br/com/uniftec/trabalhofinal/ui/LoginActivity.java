@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import br.com.uniftec.trabalhofinal.R;
 import br.com.uniftec.trabalhofinal.model.LoginPOST;
+import br.com.uniftec.trabalhofinal.model.Token;
 import br.com.uniftec.trabalhofinal.task.ValidarLoginTask;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, ValidarLoginTask.ValidarLoginDelegate{
@@ -31,6 +32,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         tSenha = (EditText) findViewById(R.id.tSenha);
         tNovoUsuario = (TextView) findViewById(R.id.tNovoUsuario);
         tNovoUsuario.setOnClickListener(this);
+
+        //Preguiça de digitar sempre...
+        tLogin.setText("sapoboi");
+        tSenha.setText("123");
     }
 
     @Override
@@ -59,6 +64,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void validarUsuarioSucesso(String token) {
         alert("Login efetuado com sucesso: " + token);
+
+        //Setar Token//
+        Token.usuarioToken = token;
 
         startActivity(new Intent(this, ListaProdutosActivity.class));
     }

@@ -17,7 +17,7 @@
     <string name="cidade">Cidade</string>
     <string name="adicionar">Adicionar</string>
     <string name="estado">Estado</string>
-    <string name="adicionarnovoendereco">Adicionar Novo Endereço</string>
+    <string name="adicionarnovoendereco">Adicionar Endereço</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
 </resources>
