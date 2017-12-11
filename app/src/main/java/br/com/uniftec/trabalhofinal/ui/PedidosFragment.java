@@ -1,14 +1,15 @@
 package br.com.uniftec.trabalhofinal.ui;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,14 +20,11 @@ import br.com.uniftec.trabalhofinal.model.Endereco;
 import br.com.uniftec.trabalhofinal.model.Pedido;
 import br.com.uniftec.trabalhofinal.model.Produto;
 
-import static br.com.uniftec.trabalhofinal.ui.CarrinhoActivity.PRODUTO_PARAMETER;
-
 /**
- * Created by Fin on 09/11/2017.
+ * Created by Fin on 11/12/2017.
  */
 
-public class PedidosActivity extends AbstractActivity {
-
+public class PedidosFragment extends Fragment {
 
     private TextView txtDataPedido;
     private TextView txtEndereco;
@@ -34,21 +32,22 @@ public class PedidosActivity extends AbstractActivity {
     private TextView txtTitulo;
     private TextView txtPreco;
     private Button btnStatus;
-    private Context meuContext;
+    private Context context;
     private Endereco endereco;
-    private Toolbar toolbar;
     private Produto produto;
     private Pedido pedido;
 
-
+    @Nullable
     @Override
-    protected void setupView() {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        context = getContext();
 
-        meuContext = this;
+        View view = inflater.inflate(R.layout.activity_pedidos, container, false);
 
         ArrayList<Pedido> listPedidos = new ArrayList<>();
 
-        produto = (Produto) getIntent().getSerializableExtra(PRODUTO_PARAMETER);
+        final Produto p = new Produto();
+        p.criaProdutos(p);
 
         for (int i = 0; i <= 5; i++){
 
@@ -59,37 +58,26 @@ public class PedidosActivity extends AbstractActivity {
 
         }
 
-        txtDataPedido = (TextView) findViewById(R.id.text_pedido_data);
+        txtDataPedido = view.findViewById(R.id.text_pedido_data);
         txtDataPedido.setText(pedido.getData());
 
-        txtEndereco = (TextView) findViewById(R.id.text_pedido_entrega);
+        txtEndereco = view.findViewById(R.id.text_pedido_entrega);
         txtEndereco.setText("Rua José Bisol, 1985, Ap 42 - Lourdes - Caxias do Sul/RS");
 
-        txtTotal = (TextView) findViewById(R.id.text_pedido_total);
+        txtTotal = view.findViewById(R.id.text_pedido_total);
 
         txtTotal.setText("R$ " + String.format(Locale.getDefault(), "%.2f", somaProdutos(pedido.getProdutos())));
 
-        btnStatus = (Button) findViewById(R.id.button_pedido_status);
+        btnStatus = view.findViewById(R.id.button_pedido_status);
         btnStatus.setText(pedido.getStatus());
 
-        txtTitulo = (TextView) findViewById(R.id.pedidos_titulo);
-        txtTitulo.setText(produto.getTitulo());
+        txtTitulo = view.findViewById(R.id.pedidos_titulo);
+        txtTitulo.setText(p.getTitulo());
 
-        txtPreco = (TextView) findViewById(R.id.pedidos_preco);
-        txtPreco.setText("R$ " + produto.getPreco().toString());
+        txtPreco = view.findViewById(R.id.pedidos_preco);
+        txtPreco.setText("R$ " + p.getPreco().toString());
 
-        actionBar.setTitle("Seus Pedidos");
-
-
-    }
-
-    @Override
-    protected int getLayoutRes() {
-        return R.layout.activity_pedidos;
-    }
-
-    private void alert(String s){
-        Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+        return view;
     }
 
     private Double somaProdutos(List<Produto> produtos){
@@ -105,14 +93,4 @@ public class PedidosActivity extends AbstractActivity {
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        if(item.getItemId() == android.R.id.home){
-            onBackPressed();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

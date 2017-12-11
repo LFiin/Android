@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //Setar Token//
         Token.usuarioToken = token;
 
-        startActivity(new Intent(this, ListaProdutosActivity.class));
+        startActivity(new Intent(this, MenuActivity.class));
     }
 
     @Override

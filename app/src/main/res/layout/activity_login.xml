@@ -9,39 +9,28 @@
     android:padding="16dp"
     tools:context="br.com.uniftec.trabalhofinal.ui.LoginActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/usuario"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/tLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteY="25dp"
-        tools:layout_editor_absoluteX="0dp" />
+        <EditText
+            android:id="@+id/tLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email" />
+    </android.support.design.widget.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textView2"
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/senha"
-        tools:layout_editor_absoluteY="67dp"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/tSenha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteY="84dp"
-        tools:layout_editor_absoluteX="0dp" />
+        <EditText
+            android:id="@+id/tSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Senha" />
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/btLogin"

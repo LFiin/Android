@@ -2,6 +2,8 @@ package br.com.uniftec.trabalhofinal.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -64,11 +66,7 @@ public class ProdutoActivity extends AbstractActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(meuContext, CarrinhoActivity.class);
-
-                intent.putExtra(ProdutoActivity.PRODUTO_PARAMETER, produto);
-
-                meuContext.startActivity(intent);
+                alert("Produto adicionado ao carrinho de compras");
 
             }
         });
@@ -104,5 +102,6 @@ public class ProdutoActivity extends AbstractActivity {
     private void alert(String s){
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
+
 
 }

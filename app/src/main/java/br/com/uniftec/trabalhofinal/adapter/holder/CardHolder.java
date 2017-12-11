@@ -19,7 +19,6 @@ import android.widget.Toast;
 import br.com.uniftec.trabalhofinal.R;
 import br.com.uniftec.trabalhofinal.adapter.CardAdapter;
 import br.com.uniftec.trabalhofinal.model.Produto;
-import br.com.uniftec.trabalhofinal.ui.ListaProdutosActivity;
 import br.com.uniftec.trabalhofinal.ui.ProdutoActivity;
 
 

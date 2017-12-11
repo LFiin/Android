@@ -1,9 +1,13 @@
 package br.com.uniftec.trabalhofinal.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,10 +18,10 @@ import br.com.uniftec.trabalhofinal.model.UsuarioPUT;
 import br.com.uniftec.trabalhofinal.task.IncluirUsuarioTask;
 
 /**
- * Created by lececatto on 28/10/2017.
+ * Created by Fin on 11/12/2017.
  */
 
-public class CadastroActivity extends AppCompatActivity implements View.OnClickListener, IncluirUsuarioTask.IncluirUsuarioDelegate{
+public class CadastroFragment extends Fragment implements View.OnClickListener, IncluirUsuarioTask.IncluirUsuarioDelegate{
 
     private Button btAddNovoEndereco;
     private Button btCadastrar;
@@ -27,29 +31,41 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
     private EditText tNome;
     private EditText tCpf;
     private EditText tTelefone;
+    private Context context;
 
+    public CadastroFragment(){
+        // EMPTY CONSTRUCTOR
+    }
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        context = getContext();
 
-        //btAddNovoEndereco.setOnClickListener(this);
-        btCadastrar = (Button) findViewById(R.id.btCadastrar);
+        View view = inflater.inflate(R.layout.activity_cadastro, container, false);
+
+        btAddNovoEndereco = view.findViewById(R.id.btAddNovoEndereco);
+        btAddNovoEndereco.setOnClickListener(this);
+        btCadastrar = view.findViewById(R.id.btCadastrar);
         btCadastrar.setOnClickListener(this);
-        btCancelar = (Button) findViewById(R.id.btCancelar);
+        btCancelar = view.findViewById(R.id.btCancelar);
         btCancelar.setOnClickListener(this);
-        tEmail = (EditText) findViewById(R.id.tEmail);
-        tSenha = (EditText) findViewById(R.id.tSenha);
-        tNome = (EditText) findViewById(R.id.tNome);
-        tCpf = (EditText) findViewById(R.id.tCpf);
-        tTelefone = (EditText) findViewById(R.id.tTelefone);
+        tEmail = view.findViewById(R.id.tEmail);
+        tSenha = view.findViewById(R.id.tSenha);
+        tNome = view.findViewById(R.id.tNome);
+        tCpf = view.findViewById(R.id.tCpf);
+        tTelefone = view.findViewById(R.id.tTelefone);
 
         if (!"".equals(Token.usuarioToken)){
             btAddNovoEndereco.setVisibility(View.VISIBLE);
             btCadastrar.setText("Atualizar");
             alert(Token.usuarioToken);
         }
+
+        return view;
     }
+
+
 
     @Override
     public void onClick(View view) {
@@ -71,19 +87,20 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
                     incluirUsuarioTask.execute(usuarioPUT);
                 }
 
-                finish();
+                startActivity(new Intent(context, MenuActivity.class));
             } else {
                 alert("Todos os campos devem estar preenchidos");
             }
         } else if (view == btAddNovoEndereco){
-            startActivity(new Intent(this, EnderecoActivity.class));
+            startActivity(new Intent(context, EnderecoActivity.class));
         } else {
-            finish();
+            startActivity(new Intent(context, MenuActivity.class));
         }
+
     }
 
     private void alert(String s){
-        Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+        Toast.makeText(context, s, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -93,6 +110,6 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void incluirUsuarioFalha(String erro) {
-        alert(erro);
+
     }
 }

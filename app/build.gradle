@@ -17,6 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
 }
 
 dependencies {
@@ -29,5 +36,8 @@ dependencies {
     compile 'com.android.support:cardview-v7:26.0.+'
     compile 'com.android.support:recyclerview-v7:26.0.+'
     compile 'com.android.support:design:26.+'
+
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-jackson:2.3.0'
     testCompile 'junit:junit:4.12'
 }

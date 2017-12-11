@@ -7,7 +7,7 @@
 
     <item
         android:id="@+id/menu_cadastro"
-        android:title="Sua Conta" />
+        android:title="Minha Conta" />
 
     <item
         android:id="@+id/menu_carrinho"
@@ -17,5 +17,9 @@
     <item
         android:id="@+id/menu_pedidos"
         android:title="Pedidos" />
+    <item
+        android:id="@+id/menu_sair"
+        android:title="Sair" />
+
 
 </menu>

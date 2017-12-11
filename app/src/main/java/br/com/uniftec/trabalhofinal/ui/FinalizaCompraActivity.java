@@ -24,8 +24,6 @@ import br.com.uniftec.trabalhofinal.R;
 import br.com.uniftec.trabalhofinal.model.Endereco;
 import br.com.uniftec.trabalhofinal.model.Produto;
 
-import static br.com.uniftec.trabalhofinal.ui.CarrinhoActivity.PRODUTO_PARAMETER;
-
 /**
  * Created by Fin on 09/11/2017.
  */
@@ -53,8 +51,6 @@ public class FinalizaCompraActivity extends AbstractActivity {
         meuContext = this;
 
         ArrayList<String> listEnderecos = new ArrayList<>();
-
-        produto = (Produto) getIntent().getSerializableExtra(PRODUTO_PARAMETER);
 
         for (int i = 0; i <= 5; i++){
 
@@ -156,13 +152,11 @@ public class FinalizaCompraActivity extends AbstractActivity {
                         !"".equals(editDataExpiracao.getText().toString()) &&
                         !"".equals(editCVV.getText().toString())) {
 
-                    alert("Pedido realizado com sucesso!");
-
-                    Intent intent = new Intent(meuContext, PedidosActivity.class);
-
-                    intent.putExtra(ProdutoActivity.PRODUTO_PARAMETER, produto);
+                    Intent intent = new Intent(meuContext, MenuActivity.class);
 
                     meuContext.startActivity(intent);
+
+                    alert("Pedido realizado com sucesso!");
 
                 } else {
                     alert("Preenha todos os campos!");
@@ -174,11 +168,7 @@ public class FinalizaCompraActivity extends AbstractActivity {
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(meuContext, CarrinhoActivity.class);
-
-                intent.putExtra(ProdutoActivity.PRODUTO_PARAMETER, produto);
-
-                meuContext.startActivity(intent);
+                onBackPressed();
             }
         });
 

@@ -18,7 +18,6 @@ import java.util.Locale;
 import br.com.uniftec.trabalhofinal.R;
 import br.com.uniftec.trabalhofinal.adapter.holder.CardHolder;
 import br.com.uniftec.trabalhofinal.model.Produto;
-import br.com.uniftec.trabalhofinal.ui.ListaProdutosActivity;
 import br.com.uniftec.trabalhofinal.ui.ProdutoActivity;
 
 import static android.support.v4.content.ContextCompat.startActivity;
