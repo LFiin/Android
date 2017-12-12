@@ -7,7 +7,7 @@ import java.io.IOException;
 import br.com.uniftec.trabalhofinal.model.ResponseStatus;
 import br.com.uniftec.trabalhofinal.model.Resposta;
 import br.com.uniftec.trabalhofinal.model.UsuarioPUT;
-import br.com.uniftec.trabalhofinal.service.UsuarioServicePUT;
+import br.com.uniftec.trabalhofinal.service.UsuarioService;
 import br.com.uniftec.trabalhofinal.util.ServerCommunicationUtil;
 import retrofit2.Response;
 import retrofit2.Call;
@@ -19,17 +19,17 @@ import retrofit2.Call;
 public class IncluirUsuarioTask extends AsyncTask<UsuarioPUT, Void, Resposta<String>>{
 
     private IncluirUsuarioDelegate delegate;
-    private UsuarioServicePUT usuarioServicePUT;
+    private UsuarioService usuarioService;
 
     public IncluirUsuarioTask(IncluirUsuarioDelegate delegate){
-        this.usuarioServicePUT = ServerCommunicationUtil.getInstance().getRetrofit().create(UsuarioServicePUT.class);
+        this.usuarioService = ServerCommunicationUtil.getInstance().getRetrofit().create(UsuarioService.class);
         this.delegate = delegate;
     }
 
     @Override
     protected Resposta<String> doInBackground(UsuarioPUT... usuarioPUTs) {
 
-        Call<Resposta<String>> call = usuarioServicePUT.salvarUsuario(usuarioPUTs[0]);
+        Call<Resposta<String>> call = usuarioService.salvarUsuario(usuarioPUTs[0]);
 
         try {
             Response<Resposta<String>> response = call.execute();

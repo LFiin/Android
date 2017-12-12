@@ -8,7 +8,7 @@ import java.util.List;
 
 public class UsuarioGET {
 
-    public UsuarioGET(String cpf, String email, List<EnderecoGET> enderecos, String id, String nome, String telefone) {
+    public UsuarioGET(String cpf, String email, List<EnderecoGET> enderecos, Double id, String nome, String telefone) {
         this.cpf = cpf;
         this.email = email;
         this.enderecos = enderecos;
@@ -17,13 +17,15 @@ public class UsuarioGET {
         this.telefone = telefone;
     }
 
+    public UsuarioGET(){}
+
     private String cpf;
 
     private String email;
 
     private List<EnderecoGET> enderecos;
 
-    private String id;
+    private Double id;
 
     private String nome;
 
@@ -53,11 +55,11 @@ public class UsuarioGET {
         this.enderecos = enderecos;
     }
 
-    public String getId() {
+    public Double getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Double id) {
         this.id = id;
     }
 

@@ -14,17 +14,17 @@ import android.widget.Toast;
 
 import br.com.uniftec.trabalhofinal.R;
 import br.com.uniftec.trabalhofinal.model.Token;
-import br.com.uniftec.trabalhofinal.model.UsuarioPUT;
-import br.com.uniftec.trabalhofinal.task.IncluirUsuarioTask;
+import br.com.uniftec.trabalhofinal.model.UsuarioGET;
+import br.com.uniftec.trabalhofinal.task.ReceberUsuarioTask;
 
 /**
  * Created by Fin on 11/12/2017.
  */
 
-public class CadastroFragment extends Fragment implements View.OnClickListener, IncluirUsuarioTask.IncluirUsuarioDelegate{
+public class CadastroFragment extends Fragment implements View.OnClickListener, ReceberUsuarioTask.ReceberUsuarioDelegate{
 
     private Button btAddNovoEndereco;
-    private Button btCadastrar;
+    private Button btAtualizar;
     private Button btCancelar;
     private EditText tEmail;
     private EditText tSenha;
@@ -46,8 +46,8 @@ public class CadastroFragment extends Fragment implements View.OnClickListener, 
 
         btAddNovoEndereco = view.findViewById(R.id.btAddNovoEndereco);
         btAddNovoEndereco.setOnClickListener(this);
-        btCadastrar = view.findViewById(R.id.btCadastrar);
-        btCadastrar.setOnClickListener(this);
+        btAtualizar = view.findViewById(R.id.btCadastrar);
+        btAtualizar.setOnClickListener(this);
         btCancelar = view.findViewById(R.id.btCancelar);
         btCancelar.setOnClickListener(this);
         tEmail = view.findViewById(R.id.tEmail);
@@ -56,11 +56,12 @@ public class CadastroFragment extends Fragment implements View.OnClickListener, 
         tCpf = view.findViewById(R.id.tCpf);
         tTelefone = view.findViewById(R.id.tTelefone);
 
-        if (!"".equals(Token.usuarioToken)){
-            btAddNovoEndereco.setVisibility(View.VISIBLE);
-            btCadastrar.setText("Atualizar");
-            alert(Token.usuarioToken);
-        }
+        btAddNovoEndereco.setVisibility(View.VISIBLE);
+        btAtualizar.setText("Atualizar");
+        alert(Token.usuarioToken);
+
+        ReceberUsuarioTask receberUsuarioTask = new ReceberUsuarioTask(this);
+        receberUsuarioTask.execute(Token.usuarioToken);
 
         return view;
     }
@@ -69,23 +70,12 @@ public class CadastroFragment extends Fragment implements View.OnClickListener, 
 
     @Override
     public void onClick(View view) {
-        if (view == btCadastrar) {
+        if (view == btAtualizar) {
             if (!"".equals(tEmail.getText().toString()) && !"".equals(tSenha.getText().toString())
                     && !"".equals(tNome.getText().toString()) && !"".equals(tCpf.getText().toString())
                     && !"".equals(tTelefone.getText().toString())) {
 
-                if (!"".equals(Token.usuarioToken)){
                     //Atualizar usuario
-                } else {
-                    UsuarioPUT usuarioPUT = new UsuarioPUT( tCpf.getText().toString()
-                            , tEmail.getText().toString()
-                            , tNome.getText().toString()
-                            , tSenha.getText().toString()
-                            , tTelefone.getText().toString());
-
-                    IncluirUsuarioTask incluirUsuarioTask = new IncluirUsuarioTask(this);
-                    incluirUsuarioTask.execute(usuarioPUT);
-                }
 
                 startActivity(new Intent(context, MenuActivity.class));
             } else {
@@ -104,12 +94,17 @@ public class CadastroFragment extends Fragment implements View.OnClickListener, 
     }
 
     @Override
-    public void incluirUsuarioSucesso(String token) {
-        alert("Usuário incluído com sucesso: " + token);
+    public void receberUsuarioSucesso(UsuarioGET usuarioGET) {
+        tEmail.setText(usuarioGET.getEmail());
+        tNome.setText(usuarioGET.getNome());
+        tCpf.setText(usuarioGET.getCpf());
+        tTelefone.setText(usuarioGET.getTelefone());
+
+        //PEGAR ENDEREÇO
     }
 
     @Override
-    public void incluirUsuarioFalha(String erro) {
-
+    public void receberUsuarioFalha(String erro) {
+        alert(erro);
     }
 }

@@ -7,7 +7,7 @@ import java.io.IOException;
 import br.com.uniftec.trabalhofinal.model.LoginPOST;
 import br.com.uniftec.trabalhofinal.model.ResponseStatus;
 import br.com.uniftec.trabalhofinal.model.Resposta;
-import br.com.uniftec.trabalhofinal.service.LoginServicePOST;
+import br.com.uniftec.trabalhofinal.service.LoginService;
 import br.com.uniftec.trabalhofinal.util.ServerCommunicationUtil;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -19,17 +19,17 @@ import retrofit2.Response;
 public class ValidarLoginTask extends AsyncTask<LoginPOST, Void, Resposta<String>>{
 
     private ValidarLoginDelegate delegate;
-    private LoginServicePOST loginServicePOST;
+    private LoginService loginService;
 
     public ValidarLoginTask(ValidarLoginDelegate delegate){
-        this.loginServicePOST = ServerCommunicationUtil.getInstance().getRetrofit().create(LoginServicePOST.class);
+        this.loginService = ServerCommunicationUtil.getInstance().getRetrofit().create(LoginService.class);
         this.delegate = delegate;
     }
 
     @Override
     protected Resposta<String> doInBackground(LoginPOST... loginPOSTs) {
 
-        Call<Resposta<String>> call = loginServicePOST.validaLogin(loginPOSTs[0]);
+        Call<Resposta<String>> call = loginService.validaLogin(loginPOSTs[0]);
 
         try {
             Response<Resposta<String>> response = call.execute();

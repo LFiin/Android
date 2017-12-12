@@ -10,7 +10,7 @@ import retrofit2.http.POST;
  * Created by lececatto on 07/12/2017.
  */
 
-public interface LoginServicePOST {
+public interface LoginService {
 
     @POST("/usuario/login")
     public Call<Resposta<String>> validaLogin(@Body LoginPOST loginPOST);
