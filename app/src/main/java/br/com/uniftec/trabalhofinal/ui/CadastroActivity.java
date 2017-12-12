@@ -73,7 +73,7 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void incluirUsuarioSucesso(String token) {
-        alert("Usuário incluído com sucesso: " + token);
+        alert("Usuário incluído com sucesso!");
     }
 
     @Override

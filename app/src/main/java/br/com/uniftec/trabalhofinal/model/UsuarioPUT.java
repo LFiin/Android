@@ -14,6 +14,8 @@ public class UsuarioPUT {
         this.telefone = telefone;
     }
 
+    UsuarioPUT(){}
+
     private String cpf;
 
     private String email;

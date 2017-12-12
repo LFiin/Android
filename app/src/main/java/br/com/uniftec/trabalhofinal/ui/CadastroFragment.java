@@ -15,13 +15,19 @@ import android.widget.Toast;
 import br.com.uniftec.trabalhofinal.R;
 import br.com.uniftec.trabalhofinal.model.Token;
 import br.com.uniftec.trabalhofinal.model.UsuarioGET;
+import br.com.uniftec.trabalhofinal.model.UsuarioPOST;
+import br.com.uniftec.trabalhofinal.model.UsuarioPOSTResponse;
+import br.com.uniftec.trabalhofinal.model.UsuarioPOSTToken;
+import br.com.uniftec.trabalhofinal.task.AtualizarUsuarioTask;
 import br.com.uniftec.trabalhofinal.task.ReceberUsuarioTask;
 
 /**
  * Created by Fin on 11/12/2017.
  */
 
-public class CadastroFragment extends Fragment implements View.OnClickListener, ReceberUsuarioTask.ReceberUsuarioDelegate{
+public class CadastroFragment extends Fragment implements View.OnClickListener
+                                                        , ReceberUsuarioTask.ReceberUsuarioDelegate
+                                                        , AtualizarUsuarioTask.AtualizarUsuarioDelegate{
 
     private Button btAddNovoEndereco;
     private Button btAtualizar;
@@ -58,7 +64,6 @@ public class CadastroFragment extends Fragment implements View.OnClickListener, 
 
         btAddNovoEndereco.setVisibility(View.VISIBLE);
         btAtualizar.setText("Atualizar");
-        alert(Token.usuarioToken);
 
         ReceberUsuarioTask receberUsuarioTask = new ReceberUsuarioTask(this);
         receberUsuarioTask.execute(Token.usuarioToken);
@@ -75,7 +80,16 @@ public class CadastroFragment extends Fragment implements View.OnClickListener, 
                     && !"".equals(tNome.getText().toString()) && !"".equals(tCpf.getText().toString())
                     && !"".equals(tTelefone.getText().toString())) {
 
-                    //Atualizar usuario
+                UsuarioPOST usuarioPOST = new UsuarioPOST( tCpf.getText().toString()
+                                                         , tEmail.getText().toString()
+                                                         , tNome.getText().toString()
+                                                         , tSenha.getText().toString()
+                                                         , tTelefone.getText().toString());
+
+                UsuarioPOSTToken usuarioPOSTToken = new UsuarioPOSTToken(usuarioPOST, Token.usuarioToken);
+
+                AtualizarUsuarioTask atualizarUsuarioTask = new AtualizarUsuarioTask(this);
+                atualizarUsuarioTask.execute(usuarioPOSTToken);
 
                 startActivity(new Intent(context, MenuActivity.class));
             } else {
@@ -105,6 +119,23 @@ public class CadastroFragment extends Fragment implements View.OnClickListener, 
 
     @Override
     public void receberUsuarioFalha(String erro) {
+        alert(erro);
+    }
+
+    @Override
+    public void atualizarUsuarioSucesso(UsuarioPOSTResponse usuarioPOSTResponse) {
+        tEmail.setText(usuarioPOSTResponse.getEmail());
+        tNome.setText(usuarioPOSTResponse.getNome());
+        tCpf.setText(usuarioPOSTResponse.getCpf());
+        tTelefone.setText(usuarioPOSTResponse.getTelefone());
+
+        //PEGAR ENDEREÇO
+
+        alert("Usuário atualizado com sucesso!");
+    }
+
+    @Override
+    public void atualizarUsuarioFalha(String erro) {
         alert(erro);
     }
 }

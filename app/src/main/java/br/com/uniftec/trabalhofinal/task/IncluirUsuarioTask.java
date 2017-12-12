@@ -29,7 +29,7 @@ public class IncluirUsuarioTask extends AsyncTask<UsuarioPUT, Void, Resposta<Str
     @Override
     protected Resposta<String> doInBackground(UsuarioPUT... usuarioPUTs) {
 
-        Call<Resposta<String>> call = usuarioService.salvarUsuario(usuarioPUTs[0]);
+        Call<Resposta<String>> call = usuarioService.salvaUsuario(usuarioPUTs[0]);
 
         try {
             Response<Resposta<String>> response = call.execute();

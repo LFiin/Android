@@ -7,7 +7,7 @@ package br.com.uniftec.trabalhofinal.model;
 public class EnderecoPOST {
 
     public EnderecoPOST(String bairro, String cidade, String complemento, String estado
-                      , String id, String logradouro, String numero) {
+                      , Double id, String logradouro, String numero) {
         this.bairro = bairro;
         this.cidade = cidade;
         this.complemento = complemento;
@@ -17,6 +17,8 @@ public class EnderecoPOST {
         this.numero = numero;
     }
 
+    public EnderecoPOST(){}
+
     private String bairro;
 
     private String cidade;
@@ -25,7 +27,7 @@ public class EnderecoPOST {
 
     private String estado;
 
-    private String id;
+    private Double id;
 
     private String logradouro;
 
@@ -63,11 +65,11 @@ public class EnderecoPOST {
         this.estado = estado;
     }
 
-    public String getId() {
+    public Double getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Double id) {
         this.id = id;
     }
 

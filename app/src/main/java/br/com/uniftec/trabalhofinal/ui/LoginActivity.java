@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void validarUsuarioSucesso(String token) {
-        alert("Login efetuado com sucesso: " + token);
+        alert("Login efetuado com sucesso!");
 
         //Setar Token//
         Token.usuarioToken = token;
