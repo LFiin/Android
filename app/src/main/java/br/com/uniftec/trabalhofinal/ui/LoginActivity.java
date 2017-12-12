@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         tNovoUsuario.setOnClickListener(this);
 
         //Preguiça de digitar sempre...
-        tLogin.setText("sapoboi");
+        tLogin.setText("lececatto");
         tSenha.setText("123");
     }
 
