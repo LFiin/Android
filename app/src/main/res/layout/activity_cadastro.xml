@@ -16,7 +16,8 @@
             android:id="@+id/tEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email" />
+            android:inputType="textEmailAddress"
+            android:hint="@string/email" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -28,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="Senha" />
+            android:hint="@string/senha" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -39,7 +40,7 @@
             android:id="@+id/tNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome" />
+            android:hint="@string/nome" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -50,7 +51,7 @@
             android:id="@+id/tCpf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="CPF" />
+            android:hint="@string/cpf" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -61,7 +62,7 @@
             android:id="@+id/tTelefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Telefone" />
+            android:hint="@string/telefone" />
     </android.support.design.widget.TextInputLayout>
 
     <Button

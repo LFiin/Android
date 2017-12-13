@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +15,9 @@ import java.util.List;
 import java.util.Locale;
 
 import br.com.uniftec.trabalhofinal.R;
-import br.com.uniftec.trabalhofinal.model.Endereco;
-import br.com.uniftec.trabalhofinal.model.Pedido;
-import br.com.uniftec.trabalhofinal.model.Produto;
+import br.com.uniftec.trabalhofinal.model.endereco.Endereco;
+import br.com.uniftec.trabalhofinal.model.pedido.Pedido;
+import br.com.uniftec.trabalhofinal.model.produto.Produto;
 
 /**
  * Created by Fin on 11/12/2017.

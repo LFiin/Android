@@ -1,12 +1,12 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.usuario;
 
 /**
  * Created by lececatto on 15/11/2017.
  */
 
-public class UsuarioPUT {
+public class UsuarioPOST {
 
-    public UsuarioPUT(String cpf, String email, String nome, String senha, String telefone) {
+    public UsuarioPOST(String cpf, String email, String nome, String senha, String telefone) {
         this.cpf = cpf;
         this.email = email;
         this.nome = nome;
@@ -14,7 +14,7 @@ public class UsuarioPUT {
         this.telefone = telefone;
     }
 
-    UsuarioPUT(){}
+    UsuarioPOST(){}
 
     private String cpf;
 

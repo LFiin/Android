@@ -14,10 +14,10 @@ import android.widget.Toast;
 
 import br.com.uniftec.trabalhofinal.R;
 import br.com.uniftec.trabalhofinal.model.Token;
-import br.com.uniftec.trabalhofinal.model.UsuarioGET;
-import br.com.uniftec.trabalhofinal.model.UsuarioPOST;
-import br.com.uniftec.trabalhofinal.model.UsuarioPOSTResponse;
-import br.com.uniftec.trabalhofinal.model.UsuarioPOSTToken;
+import br.com.uniftec.trabalhofinal.model.usuario.UsuarioGET;
+import br.com.uniftec.trabalhofinal.model.usuario.UsuarioPOST;
+import br.com.uniftec.trabalhofinal.model.usuario.UsuarioPOSTResponse;
+import br.com.uniftec.trabalhofinal.model.usuario.UsuarioPOSTToken;
 import br.com.uniftec.trabalhofinal.task.AtualizarUsuarioTask;
 import br.com.uniftec.trabalhofinal.task.ReceberUsuarioTask;
 

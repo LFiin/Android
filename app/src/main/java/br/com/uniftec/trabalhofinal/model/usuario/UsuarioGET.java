@@ -1,6 +1,8 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.usuario;
 
 import java.util.List;
+
+import br.com.uniftec.trabalhofinal.model.endereco.EnderecoGET;
 
 /**
  * Created by lececatto on 15/11/2017.

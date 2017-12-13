@@ -8,13 +8,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.uniftec.trabalhofinal.R;
-import br.com.uniftec.trabalhofinal.model.EnderecoPUT;
+import br.com.uniftec.trabalhofinal.model.Token;
+import br.com.uniftec.trabalhofinal.model.endereco.EnderecoPUT;
+import br.com.uniftec.trabalhofinal.model.endereco.EnderecoPUTToken;
+import br.com.uniftec.trabalhofinal.model.usuario.UsuarioPOSTResponse;
+import br.com.uniftec.trabalhofinal.task.IncluirEnderecoTask;
 
 /**
  * Created by lececatto on 02/11/2017.
  */
 
-public class EnderecoActivity extends AppCompatActivity implements View.OnClickListener {
+public class EnderecoActivity extends AppCompatActivity implements View.OnClickListener, IncluirEnderecoTask.IncluirEnderecoDelegate {
 
     private EditText tRua;
     private EditText tNumero;
@@ -48,7 +52,18 @@ public class EnderecoActivity extends AppCompatActivity implements View.OnClickL
                     &&!"".equals(tComplemento.getText().toString())&&!"".equals(tBairro.getText().toString())
                     &&!"".equals(tCidade.getText().toString())&&!"".equals(tEstado.getText().toString())) {
 
-                alert("Cadastro de endereço realizado com sucesso");
+                EnderecoPUT enderecoPUT = new EnderecoPUT( tBairro.getText().toString()
+                                                         , tCidade.getText().toString()
+                                                         , tComplemento.getText().toString()
+                                                         , tEstado.getText().toString()
+                                                         , tRua.getText().toString()
+                                                         , tNumero.getText().toString());
+
+                EnderecoPUTToken enderecoPUTToken = new EnderecoPUTToken(enderecoPUT, Token.usuarioToken);
+
+                IncluirEnderecoTask incluirEnderecoTask = new IncluirEnderecoTask(this);
+                incluirEnderecoTask.execute(enderecoPUTToken);
+
                 finish();
             } else {
                 alert("Todos os campos devem estar preenchidos");
@@ -60,5 +75,15 @@ public class EnderecoActivity extends AppCompatActivity implements View.OnClickL
 
     private void alert(String s){
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void incluirEnderecoSucesso(UsuarioPOSTResponse usuarioPOSTResponse) {
+        alert("Endereço incluído com sucesso!");
+    }
+
+    @Override
+    public void incluirEnderecoFalha(String erro) {
+        alert(erro);
     }
 }

@@ -18,7 +18,7 @@ import java.util.Locale;
 
 import br.com.uniftec.trabalhofinal.R;
 import br.com.uniftec.trabalhofinal.adapter.CardAdapter;
-import br.com.uniftec.trabalhofinal.model.Produto;
+import br.com.uniftec.trabalhofinal.model.produto.Produto;
 
 /**
  * Created by Fin on 11/12/2017.

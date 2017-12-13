@@ -1,4 +1,6 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.item;
+
+import br.com.uniftec.trabalhofinal.model.produto.ProdutoGET;
 
 /**
  * Created by lececatto on 15/11/2017.

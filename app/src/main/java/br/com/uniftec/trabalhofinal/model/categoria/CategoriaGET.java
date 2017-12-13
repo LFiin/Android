@@ -1,12 +1,12 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.categoria;
 
 /**
  * Created by lececatto on 15/11/2017.
  */
 
-public class CategoriaPOST {
+public class CategoriaGET {
 
-    public CategoriaPOST(String id, String nome) {
+    public CategoriaGET(String id, String nome) {
         this.id = id;
         this.nome = nome;
     }

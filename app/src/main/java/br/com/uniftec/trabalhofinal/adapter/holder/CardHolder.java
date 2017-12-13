@@ -1,25 +1,17 @@
 package br.com.uniftec.trabalhofinal.adapter.holder;
 
-import android.content.ClipData;
-import android.content.ClipData.Item;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import br.com.uniftec.trabalhofinal.R;
 import br.com.uniftec.trabalhofinal.adapter.CardAdapter;
-import br.com.uniftec.trabalhofinal.model.Produto;
-import br.com.uniftec.trabalhofinal.ui.ProdutoActivity;
 
 
 /**

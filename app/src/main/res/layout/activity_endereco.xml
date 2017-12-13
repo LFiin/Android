@@ -16,8 +16,8 @@
             android:id="@+id/tRua"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Rua" />
-    </android.support.design.widget.TextInputLayout>s
+            android:hint="@string/rua" />
+    </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
             android:id="@+id/tNumero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Número" />
+            android:hint="@string/numero" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -38,7 +38,7 @@
             android:id="@+id/tComplemento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Complemento" />
+            android:hint="@string/complemento" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -49,7 +49,7 @@
             android:id="@+id/tBairro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Bairro" />
+            android:hint="@string/bairro" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -60,7 +60,7 @@
             android:id="@+id/tCidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Cinade" />
+            android:hint="@string/cidade" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -71,7 +71,7 @@
             android:id="@+id/tEstado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Estado" />
+            android:hint="@string/estado" />
     </android.support.design.widget.TextInputLayout>
 
     <LinearLayout

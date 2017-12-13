@@ -1,15 +1,18 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.produto;
 
 import java.util.List;
+
+import br.com.uniftec.trabalhofinal.model.categoria.CategoriaPOST;
+import br.com.uniftec.trabalhofinal.model.imagem.ImagemPOST;
 
 /**
  * Created by lececatto on 15/11/2017.
  */
 
-public class ProdutoPUT {
+public class ProdutoPOST {
 
-    public ProdutoPUT(CategoriaPUT categoria, String descricao, String id, ImagemPUT imagemPrincipal
-                     , List<ImagemPUT> imagens, String nome, String preco, String precoDesconto) {
+    public ProdutoPOST(CategoriaPOST categoria, String descricao, String id, ImagemPOST imagemPrincipal
+                     , List<ImagemPOST> imagens, String nome, String preco, String precoDesconto) {
         this.categoria = categoria;
         this.descricao = descricao;
         this.id = id;
@@ -20,15 +23,15 @@ public class ProdutoPUT {
         this.precoDesconto = precoDesconto;
     }
 
-    private CategoriaPUT categoria;
+    private CategoriaPOST categoria;
 
     private String descricao;
 
     private String id;
 
-    private ImagemPUT imagemPrincipal;
+    private ImagemPOST imagemPrincipal;
 
-    private List<ImagemPUT> imagens;
+    private List<ImagemPOST> imagens;
 
     private String nome;
 
@@ -36,11 +39,11 @@ public class ProdutoPUT {
 
     private String precoDesconto;
 
-    public CategoriaPUT getCategoria() {
+    public CategoriaPOST getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(CategoriaPUT categoria) {
+    public void setCategoria(CategoriaPOST categoria) {
         this.categoria = categoria;
     }
 
@@ -60,19 +63,19 @@ public class ProdutoPUT {
         this.id = id;
     }
 
-    public ImagemPUT getImagemPrincipal() {
+    public ImagemPOST getImagemPrincipal() {
         return imagemPrincipal;
     }
 
-    public void setImagemPrincipal(ImagemPUT imagemPrincipal) {
+    public void setImagemPrincipal(ImagemPOST imagemPrincipal) {
         this.imagemPrincipal = imagemPrincipal;
     }
 
-    public List<ImagemPUT> getImagens() {
+    public List<ImagemPOST> getImagens() {
         return imagens;
     }
 
-    public void setImagens(List<ImagemPUT> imagens) {
+    public void setImagens(List<ImagemPOST> imagens) {
         this.imagens = imagens;
     }
 

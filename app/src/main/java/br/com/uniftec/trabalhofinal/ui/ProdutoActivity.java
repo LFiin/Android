@@ -1,9 +1,6 @@
 package br.com.uniftec.trabalhofinal.ui;
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,13 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
 import java.util.Locale;
 
 import br.com.uniftec.trabalhofinal.R;
-import br.com.uniftec.trabalhofinal.model.Produto;
-
-import static android.widget.Toast.*;
+import br.com.uniftec.trabalhofinal.model.produto.Produto;
 
 /**
  * Created by Fin on 08/11/2017.

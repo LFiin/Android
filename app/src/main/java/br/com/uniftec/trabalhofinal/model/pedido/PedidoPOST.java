@@ -1,6 +1,9 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.pedido;
 
 import java.util.List;
+
+import br.com.uniftec.trabalhofinal.model.endereco.EnderecoPOST;
+import br.com.uniftec.trabalhofinal.model.item.ItemPOST;
 
 /**
  * Created by lececatto on 15/11/2017.

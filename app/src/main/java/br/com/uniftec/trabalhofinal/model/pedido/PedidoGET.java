@@ -1,6 +1,9 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.pedido;
 
 import java.util.List;
+
+import br.com.uniftec.trabalhofinal.model.endereco.EnderecoGET;
+import br.com.uniftec.trabalhofinal.model.item.ItemGET;
 
 /**
  * Created by lececatto on 15/11/2017.

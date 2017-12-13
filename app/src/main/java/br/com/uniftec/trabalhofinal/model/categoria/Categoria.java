@@ -1,4 +1,4 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.categoria;
 
 /**
  * Created by lececatto on 28/10/2017.

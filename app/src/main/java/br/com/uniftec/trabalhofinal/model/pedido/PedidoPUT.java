@@ -1,6 +1,8 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.pedido;
 
 import java.util.List;
+
+import br.com.uniftec.trabalhofinal.model.produto.ProdutoPUT;
 
 /**
  * Created by lececatto on 15/11/2017.
@@ -8,7 +10,7 @@ import java.util.List;
 
 public class PedidoPUT {
 
-    public PedidoPUT( String cartaoCredito, String codigoSeguranca, String idEnderecoUsuario
+    public PedidoPUT(String cartaoCredito, String codigoSeguranca, String idEnderecoUsuario
                     , List<ProdutoPUT> produtos, String validadeCartaoCredito) {
         this.cartaoCredito = cartaoCredito;
         this.codigoSeguranca = codigoSeguranca;

@@ -1,6 +1,9 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.produto;
 
 import java.util.List;
+
+import br.com.uniftec.trabalhofinal.model.categoria.CategoriaGET;
+import br.com.uniftec.trabalhofinal.model.imagem.ImagemGET;
 
 /**
  * Created by lececatto on 15/11/2017.
@@ -8,7 +11,7 @@ import java.util.List;
 
 public class ProdutoGET {
 
-    public ProdutoGET( CategoriaGET categoria, String descricao, String id, ImagemGET imagemPrincipal
+    public ProdutoGET(CategoriaGET categoria, String descricao, String id, ImagemGET imagemPrincipal
                      , List<ImagemGET> imagens, String nome, String preco, String precoDesconto) {
         this.categoria = categoria;
         this.descricao = descricao;

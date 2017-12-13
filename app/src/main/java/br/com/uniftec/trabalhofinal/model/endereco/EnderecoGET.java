@@ -1,12 +1,12 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.endereco;
 
 /**
  * Created by lececatto on 15/11/2017.
  */
 
-public class EnderecoPOST {
+public class EnderecoGET {
 
-    public EnderecoPOST(String bairro, String cidade, String complemento, String estado
+    public EnderecoGET( String bairro, String cidade, String complemento, String estado
                       , Double id, String logradouro, String numero) {
         this.bairro = bairro;
         this.cidade = cidade;
@@ -17,7 +17,7 @@ public class EnderecoPOST {
         this.numero = numero;
     }
 
-    public EnderecoPOST(){}
+    public EnderecoGET(){}
 
     private String bairro;
 

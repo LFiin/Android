@@ -1,4 +1,4 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.endereco;
 
 /**
  * Created by lececatto on 15/11/2017.
@@ -14,6 +14,8 @@ public class EnderecoPUT {
         this.logradouro = logradouro;
         this.numero = numero;
     }
+
+    public EnderecoPUT(){}
 
     private String bairro;
 

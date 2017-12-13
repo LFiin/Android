@@ -1,10 +1,10 @@
 package br.com.uniftec.trabalhofinal.service;
 
 import br.com.uniftec.trabalhofinal.model.Resposta;
-import br.com.uniftec.trabalhofinal.model.UsuarioGET;
-import br.com.uniftec.trabalhofinal.model.UsuarioPOST;
-import br.com.uniftec.trabalhofinal.model.UsuarioPOSTResponse;
-import br.com.uniftec.trabalhofinal.model.UsuarioPUT;
+import br.com.uniftec.trabalhofinal.model.usuario.UsuarioGET;
+import br.com.uniftec.trabalhofinal.model.usuario.UsuarioPOST;
+import br.com.uniftec.trabalhofinal.model.usuario.UsuarioPOSTResponse;
+import br.com.uniftec.trabalhofinal.model.usuario.UsuarioPUT;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;

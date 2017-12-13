@@ -1,9 +1,11 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.pedido;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
+
+import br.com.uniftec.trabalhofinal.model.produto.Produto;
+import br.com.uniftec.trabalhofinal.model.endereco.Endereco;
 
 /**
  * Created by Fin on 09/11/2017.

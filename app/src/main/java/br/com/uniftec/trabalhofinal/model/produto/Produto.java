@@ -1,10 +1,10 @@
-package br.com.uniftec.trabalhofinal.model;
-
-import android.widget.Toast;
+package br.com.uniftec.trabalhofinal.model.produto;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
+
+import br.com.uniftec.trabalhofinal.model.categoria.Categoria;
 
 
 /**

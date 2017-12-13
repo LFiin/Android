@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.uniftec.trabalhofinal.R;
-import br.com.uniftec.trabalhofinal.model.UsuarioPUT;
+import br.com.uniftec.trabalhofinal.model.usuario.UsuarioPUT;
 import br.com.uniftec.trabalhofinal.task.IncluirUsuarioTask;
 
 /**

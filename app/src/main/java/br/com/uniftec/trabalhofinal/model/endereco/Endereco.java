@@ -1,4 +1,4 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.endereco;
 
 import java.util.Random;
 

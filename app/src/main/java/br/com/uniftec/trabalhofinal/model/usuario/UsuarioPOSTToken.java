@@ -1,4 +1,4 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.usuario;
 
 /**
  * Created by lececatto on 12/12/2017.

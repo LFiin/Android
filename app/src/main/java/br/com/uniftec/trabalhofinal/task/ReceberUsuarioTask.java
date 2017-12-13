@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import br.com.uniftec.trabalhofinal.model.ResponseStatus;
 import br.com.uniftec.trabalhofinal.model.Resposta;
-import br.com.uniftec.trabalhofinal.model.UsuarioGET;
+import br.com.uniftec.trabalhofinal.model.usuario.UsuarioGET;
 import br.com.uniftec.trabalhofinal.service.UsuarioService;
 import br.com.uniftec.trabalhofinal.util.ServerCommunicationUtil;
 import retrofit2.Call;

@@ -1,12 +1,12 @@
-package br.com.uniftec.trabalhofinal.model;
+package br.com.uniftec.trabalhofinal.model.imagem;
 
 /**
  * Created by lececatto on 15/11/2017.
  */
 
-public class ImagemPOST {
+public class ImagemPUT {
 
-    public ImagemPOST(String id, String url) {
+    public ImagemPUT(String id, String url) {
         this.id = id;
         this.url = url;
     }
