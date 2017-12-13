@@ -6,20 +6,22 @@ package br.com.uniftec.trabalhofinal.model.categoria;
 
 public class CategoriaGET {
 
-    public CategoriaGET(String id, String nome) {
+    public CategoriaGET(Double id, String nome) {
         this.id = id;
         this.nome = nome;
     }
 
-    private String id;
+    public CategoriaGET(){}
+
+    private Double id;
 
     private String nome;
 
-    public String getId() {
+    public Double getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Double id) {
         this.id = id;
     }
 
