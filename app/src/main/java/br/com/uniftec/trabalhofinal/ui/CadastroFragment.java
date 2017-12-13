@@ -19,6 +19,7 @@ import br.com.uniftec.trabalhofinal.model.usuario.UsuarioPOST;
 import br.com.uniftec.trabalhofinal.model.usuario.UsuarioPOSTResponse;
 import br.com.uniftec.trabalhofinal.model.usuario.UsuarioPOSTToken;
 import br.com.uniftec.trabalhofinal.task.AtualizarUsuarioTask;
+import br.com.uniftec.trabalhofinal.task.DeletarEnderecoTask;
 import br.com.uniftec.trabalhofinal.task.ReceberUsuarioTask;
 
 /**
@@ -27,7 +28,8 @@ import br.com.uniftec.trabalhofinal.task.ReceberUsuarioTask;
 
 public class CadastroFragment extends Fragment implements View.OnClickListener
                                                         , ReceberUsuarioTask.ReceberUsuarioDelegate
-                                                        , AtualizarUsuarioTask.AtualizarUsuarioDelegate{
+                                                        , AtualizarUsuarioTask.AtualizarUsuarioDelegate
+                                                        , DeletarEnderecoTask.DeletarEnderecoDelegate{
 
     private Button btAddNovoEndereco;
     private Button btAtualizar;
@@ -96,6 +98,12 @@ public class CadastroFragment extends Fragment implements View.OnClickListener
                 alert("Todos os campos devem estar preenchidos");
             }
         } else if (view == btAddNovoEndereco){
+            //TESTE DE DELEÇÃO TESTADO E OK!
+            //EnderecoDELETE enderecoDELETE = new EnderecoDELETE(Token.usuarioToken, Long.valueOf(140));
+
+            //DeletarEnderecoTask deletarEnderecoTask = new DeletarEnderecoTask(this);
+            //deletarEnderecoTask.execute(enderecoDELETE);
+
             startActivity(new Intent(context, EnderecoActivity.class));
         } else {
             startActivity(new Intent(context, MenuActivity.class));
@@ -136,6 +144,16 @@ public class CadastroFragment extends Fragment implements View.OnClickListener
 
     @Override
     public void atualizarUsuarioFalha(String erro) {
+        alert(erro);
+    }
+
+    @Override
+    public void deletarEnderecoSucesso(UsuarioPOSTResponse usuarioPOSTResponse) {
+        alert("Endereço removido com sucesso!");
+    }
+
+    @Override
+    public void deletarEnderecoFalha(String erro) {
         alert(erro);
     }
 }
