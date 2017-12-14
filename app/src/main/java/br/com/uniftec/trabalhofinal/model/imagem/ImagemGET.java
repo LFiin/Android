@@ -11,6 +11,8 @@ public class ImagemGET {
         this.url = url;
     }
 
+    public ImagemGET(){}
+
     private String id;
 
     private String url;

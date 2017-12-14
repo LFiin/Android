@@ -14,16 +14,21 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import br.com.uniftec.trabalhofinal.R;
 import br.com.uniftec.trabalhofinal.adapter.CardAdapter;
 import br.com.uniftec.trabalhofinal.model.produto.Produto;
+import br.com.uniftec.trabalhofinal.model.produto.ProdutoGET;
+import br.com.uniftec.trabalhofinal.model.produto.ProdutoGETSend;
+import br.com.uniftec.trabalhofinal.task.ReceberProdutosTask;
 
 /**
  * Created by Fin on 11/12/2017.
  */
 
-public class ListaProdutosFragment extends Fragment implements AdapterView.OnItemClickListener {
+public class ListaProdutosFragment extends Fragment implements AdapterView.OnItemClickListener
+                                                             , ReceberProdutosTask.ReceberProdutosDelegate{
 
     private RecyclerView recyclerView;
     private CardAdapter cardAdapter;
@@ -56,6 +61,13 @@ public class ListaProdutosFragment extends Fragment implements AdapterView.OnIte
 
         dados.add(p);
 
+        // NOVO CARREGA PRODUTOS
+        ProdutoGETSend produtoGETSend = new ProdutoGETSend(true, (long) 14);
+
+        ReceberProdutosTask receberProdutosTask = new ReceberProdutosTask(this);
+        receberProdutosTask.execute(produtoGETSend);
+        // NOVO CARREGA PRODUTOS
+
         cardAdapter = new CardAdapter(context, dados);
         recyclerView.setAdapter(cardAdapter);
 
@@ -76,5 +88,15 @@ public class ListaProdutosFragment extends Fragment implements AdapterView.OnIte
 
     private void alert(String s){
         Toast.makeText(context, s, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void receberProdutosSucesso(List<ProdutoGET> produtoGETs) {
+        alert(produtoGETs.get(0).getNome());
+    }
+
+    @Override
+    public void receberProdutosFalha(String erro) {
+        alert(erro);
     }
 }

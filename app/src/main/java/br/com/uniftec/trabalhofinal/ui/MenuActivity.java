@@ -1,6 +1,5 @@
 package br.com.uniftec.trabalhofinal.ui;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -39,6 +38,9 @@ public class MenuActivity extends AbstractActivity implements NavigationView.OnN
                 break;
             case R.id.menu_pedidos:
                 fragment = new PedidosFragment();
+                break;
+            case R.id.menu_sair:
+                finish();
                 break;
         }
 
